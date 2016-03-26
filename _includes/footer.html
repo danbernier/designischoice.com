@@ -1,23 +1,30 @@
 <footer class="site-footer">
 
-  <!--
-  <div class="wrapper">
+  <div class='container'>
+    <div class="row">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
+      <div class="col-md-4">
+        &copy; {{ 'now' | date: "%Y" }} Daniel Bernier
       </div>
 
-      <div class="footer-col  footer-col-2">
+      <div class="col-md-4">
+        <i class='fa fa-twitter'></i>
+        <a href="https://twitter.com/designischoice">designischoice</a>
+        <br>
+
+        <i class='fa fa-github'></i>
+        <a href="https://github.com/danbernier/designischoice.com">danbernier/designischoice.com</a>
       </div>
 
-      <div class="footer-col  footer-col-3">
+      <div class="col-md-4">
         <p class="text">{{ site.description }}</p>
+        <p class="rss-subscribe">
+        <i class='fa fa-rss'></i>
+        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe</a>
+        </p>
       </div>
-    </div>
 
+    </div>
   </div>
-  -->
 
 </footer>

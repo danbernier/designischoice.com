@@ -48,3 +48,21 @@ $on-laptop:        800px;
         "syntax-highlighting"
 ;
 
+
+
+// fix media images disappearing in chrome:
+.media .media-object {
+  max-width: inherit;
+}
+
+.posts {
+  border-left: 1px solid #eee;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 40px;
+
+  background: $grey-color;
+  color: $grey-color-dark;
+}
