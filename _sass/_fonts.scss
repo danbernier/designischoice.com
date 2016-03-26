@@ -1,0 +1,15 @@
+// Import Noto Serif from Google
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif);
+
+@font-face {
+  font-family: 'FiraSansThin';
+  src: url('/fonts/FiraSans-Thin/firasans-thin-webfont.eot');
+  src: url('/fonts/FiraSans-Thin/firasans-thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/FiraSans-Thin/firasans-thin-webfont.woff2') format('woff2'),
+  url('/fonts/FiraSans-Thin/firasans-thin-webfont.woff') format('woff'),
+  url('/fonts/FiraSans-Thin/firasans-thin-webfont.ttf') format('truetype'),
+  url('/fonts/FiraSans-Thin/firasans-thin-webfont.svg#fira_sansthin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,12 @@
+# Site settings
+title: Design is Choice
+# email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+maybe_this_description: >
+  To design is to choose.
+  From the uncountable combinations, by some method, carefully or randomly, to choose is to design.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://designischoice.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
