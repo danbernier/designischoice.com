@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+refs = STDIN.read
+puts refs
+if refs =~ %r{^refs/heads/master}
+  puts "You're pushing to master, so we're gonna publish the blog."
+  `jekyll build`
+  `jgd`
+else
+  puts "You're not pushing to master, so, no publish for you."
+end
+
+
