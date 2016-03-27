@@ -2,88 +2,32 @@
 layout: default
 ---
 
-<div class="jumbotron">
-
-  <h1>Design is Choice</h1>
-
-</div>
+<h1 class='mast-head front-page'>{{ site.title }}</h1>
 
 <div class='row'>
-  <div class="col-md-8 projects">
+  <div class="col-md-6 projects">
     <h2>Projects</h2>
 
+    {% assign sorted_projects = site.data.projects | sort: 'when' %}
+    {% for project in sorted_projects reversed %}
     <div class='media'>
       <div class='media-left'>
-        <a href='#'>
-          <img class="media-object" src="/pool-noodles/thumb2.jpg" alt='idk?'>
+        <a href='/projects/{{ project.dir }}'>
+          <img class="media-object" src="/projects/{{ project.dir }}/thumb.png" alt='{{ project.thumb_title }}'>
         </a>
       </div>
       <div class='media-body'>
-        <h3 class='media-heading'>Noodles? Pools?</h3>
-        <p>Pool noodles, right?</p>
-        <p>Pool noodles, right? I tried to tell them. These pool noodles, they don't fuck around. But no one listened. Hey, maybe next time you'll listen to me, now, right? Now that you're dead? But now there won't BE a next time.</p>
-      </div>
-    </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/pool-noodles/thumb.jpg" alt='idk?'>
+        <a href='/projects/{{ project.dir }}'>
+          <h3 class='media-heading'>{{ project.name }} <small>{{ project.event }}</small></h3>
         </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        ...
+        <p>{{ project.blurb }}</p>
       </div>
     </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/pool-noodles/thumb.jpg" alt='idk?'>
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        ...
-      </div>
-    </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/pool-noodles/thumb.jpg" alt='idk?'>
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        ...
-      </div>
-    </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/pool-noodles/thumb.jpg" alt='idk?'>
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        ...
-      </div>
-    </div>
-
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/pool-noodles/thumb.jpg" alt='idk?'>
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        ...
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
   <div class="col-md-4 posts">
-    <h2>Posts</h2>
+    <h2>Newsworthy</h2>
 
     {% for post in site.posts limit:7 %}
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -91,4 +35,10 @@ layout: default
     <p>{{ post.excerpt }}</p>
     {% endfor %}
   </div>
+
+  <div class="col-md-2 about">
+    <h2>About</h2>
+    <p>{{ site.about }}</p>
+  </div>
+
 </div>

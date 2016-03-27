@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<h1 class='mast-head'><a href='/'>{{ site.title }}</a></h1>
+
+<div class='row'>
+  <div class='col-md-2'></div>
+
+  <div class="col-md-7 project">
+
+    <header class="project-header">
+      <h1 class="project-title">{{ page.title }}</h1>
+    </header>
+
+    <article class="project-content">
+      {{ content }}
+    </article>
+
+  </div>
+  <div class='col-md-3'>
+    <small>{{ page.when }}</small>
+  </div>
+</div>
