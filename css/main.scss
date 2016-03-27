@@ -15,7 +15,17 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+//$brand-color:      #2a7ae2;  // <- original pretty blue
+//$brand-color:      #FF7231;
+//$brand-color:      #FF6F4B; // <- v nice, salmony
+//$brand-color: #FF8164;  // <- salmon, but slightly paler
+//$brand-color: #FFDB7E;  // <- pale yellow. keeping for inspiration.
+//$brand-color: #7EC487; // green, just to see
+$brand-color: #A1D6A8; // a lighter, less-saturated green
+
+$brand-color-dark: desaturate(darken($brand-color, 20%), 15%);
+$brand-color-really-dark: desaturate(darken($brand-color, 40%), 30%);
+
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -45,7 +55,8 @@ $on-laptop:        800px;
 @import
         "base",
         "fonts",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "colors"
 ;
 
 

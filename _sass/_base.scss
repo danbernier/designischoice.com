@@ -94,7 +94,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: $brand-color-dark;
     }
 
     &:hover {
@@ -206,6 +206,6 @@ footer {
   color: $grey-color-dark;
 
   a, a:visited {
-    color: darken($brand-color, 30%);
+    color: $brand-color-really-dark;
   }
 }
