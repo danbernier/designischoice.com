@@ -8,17 +8,17 @@ layout: default
   <div class="col-md-6 projects">
     <h2>Projects</h2>
 
-    {% assign sorted_projects = site.data.projects | sort: 'when' %}
+    {% assign sorted_projects = site.categories.project | sort: 'when' %}
     {% for project in sorted_projects reversed %}
     <div class='media'>
       <div class='media-left'>
-        <a href='/projects/{{ project.dir }}'>
-          <img class="media-object" src="/projects/{{ project.dir }}/thumb.png" alt='{{ project.thumb_title }}'>
+        <a href='{{ project.url }}'>
+          <img class="media-object" src="{{ project.url }}/thumb.png" alt='{{ project.thumb_title }}'>
         </a>
       </div>
       <div class='media-body'>
-        <a href='/projects/{{ project.dir }}'>
-          <h3 class='media-heading'>{{ project.name }} <small>{{ project.event }}</small></h3>
+        <a href='{{ project.url }}'>
+          <h3 class='media-heading'>{{ project.title }} <small>{{ project.event }}</small></h3>
         </a>
         <p>{{ project.blurb }}</p>
       </div>
@@ -30,9 +30,11 @@ layout: default
     <h2>Newsworthy</h2>
 
     {% for post in site.posts limit:7 %}
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <small>{{ post.date | date: '%b %d, %y' }}</small>
-    <p>{{ post.excerpt }}</p>
+      {% unless post.category == 'project' %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <small>{{ post.date | date: '%b %d, %y' }}</small>
+        <p>{{ post.excerpt }}</p>
+      {% endunless %}
     {% endfor %}
   </div>
 

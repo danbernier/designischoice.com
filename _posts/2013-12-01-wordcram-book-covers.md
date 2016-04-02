@@ -1,7 +1,10 @@
 ---
 layout: project
+category: project
 title: WordCram Book Covers
 when: 2013-12
+blurb: Book covers was always one of the things people talked about using WordCram for, so I thought I'd try making a fake Borges cover. 
+permalink: /projects/wordcram-book-covers
 ---
 
 After talking about John Brunner with my friend [Shawn Crahan](https://plus.google.com/108723091794785516898), I saw that "Stand on Zanzibar" was [reprinted in August 2011](http://www.amazon.com/Stand-Zanzibar-John-Brunner/dp/0765326787), with a very [WordCram](http://wordcram.org)-y cover: 
