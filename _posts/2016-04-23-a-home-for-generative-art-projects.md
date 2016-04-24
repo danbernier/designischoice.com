@@ -1,6 +1,6 @@
 ---
 title: A Home for Generative Art Projects
-date: 2016-04-01
+date: 2016-04-23
 ---
 
 For over a decade (yeesh), I've intermittently blogged at [invisibleblocks](http://invisibleblocks.com) about software, agile methods, amateur math, and programming languages, but in the past few years, generative art posts have appeared in the mix. This new tangent threatens to unravel that blog's argument, and ruin my reputation as a sober software engineer. 
