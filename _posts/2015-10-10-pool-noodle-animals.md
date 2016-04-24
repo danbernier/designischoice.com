@@ -90,15 +90,33 @@ Look at Dan G, noodling like a boss: bag of noodles in one hand, marker in the o
 
 ![](dan-like-a-pro.jpg)
 
-- from gdrive, one w/ scott, the horses, the red-head, you & mary on Chewie, and chickie all done
-- show you & mary on chewie, because it shows how you'd leave holes in the solid areas, to fill mindlessly later
+## The Results
 
-installation pics on gdrive: https://drive.google.com/drive/folders/0B5-B3rExYXCiZjJpTFZ1cTRXem8
+Here they are, from left to right, which is about the reverse of the order they were completed in:
 
-TODO: Tell the story about how the wind never caused a problem, until Shelli came by RIGHT as the wind whipped 3 or 4 bags all over the grass.
+![](01.1200.jpg)
 
+![](02.1200.jpg)
 
-end w/ a gallery of close-ups of each of the 12
+![](03.1200.jpg)
+
+![](04.1200.jpg)
+
+![](05.1200.jpg)
+
+![](06.1200.jpg)
+
+![](07.1200.jpg)
+
+![](08.1200.jpg)
+
+![](09.1200.jpg)
+
+![](10.1200.jpg)
+
+![](11.1200.jpg)
+
+![](12.1200.jpg)
 
 ## After the Show
 
@@ -106,7 +124,4 @@ end w/ a gallery of close-ups of each of the 12
 
 ![](panorama.jpg){: .open}
 
-
 You can (as of this post, anyway) see it up on [Google Street view](https://www.google.com/maps/@41.3189283,-72.9391609,3a,75y,221.88h,89.7t/data=!3m6!1e1!3m4!1sGNkStzNktfHzy6_1vrxfpA!2e0!7i13312!8i6656!6m1!1e1?hl=en).
-
-
