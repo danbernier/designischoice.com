@@ -7,6 +7,8 @@ blurb: Book covers was always one of the things people talked about using WordCr
 permalink: /projects/wordcram-book-covers
 ---
 
+[_Originally posted in Google Plus_](https://plus.google.com/u/0/108331224359319726955/posts/dspcMRSmbaQ)
+
 After talking about John Brunner with my friend [Shawn Crahan](https://plus.google.com/108723091794785516898), I saw that "Stand on Zanzibar" was [reprinted in August 2011](http://www.amazon.com/Stand-Zanzibar-John-Brunner/dp/0765326787), with a very [WordCram](http://wordcram.org)-y cover: 
 
 ![Stand on Zanzibar](imgs/zanzibar.png)
@@ -31,4 +33,3 @@ The font I used was Bebas Neue, which, it seems, you can never go wrong with.
 ![](imgs/yellow.png)
 
 
-[Originally posted in Google Plus.](https://plus.google.com/u/0/108331224359319726955/posts/dspcMRSmbaQ)

@@ -7,6 +7,8 @@ when: 2014-08
 permalink: /projects/fractal-circles
 ---
 
+[_Originally posted on invisibleblocks.com_](http://invisibleblocks.com/2015/12/12/fractal-circles/)
+
 In August of 2014, I participated in [Re:GENERATE](http://grovenewhaven.com/art-of-code-regenerate/), a show featuring computer-generated art. I made, among other things, a generative series for the event, that I named Fractal Circles.
 
 <div class='gallery'>
