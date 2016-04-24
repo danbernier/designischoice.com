@@ -21,7 +21,13 @@ $background-color: #fdfdfd;
 //$brand-color: #FF8164;  // <- salmon, but slightly paler
 //$brand-color: #FFDB7E;  // <- pale yellow. keeping for inspiration.
 //$brand-color: #7EC487; // green, just to see
-$brand-color: #A1D6A8; // a lighter, less-saturated green
+//$brand-color: #A1D6A8; // a lighter, less-saturated green
+// my own shot(s) at blue:
+//$brand-color: #37BFE3;
+//$brand-color: #62C8E3;
+//$brand-color: #4CADC6;
+//$brand-color: #73CFE8;
+$brand-color: #2BB1E0;
 
 $brand-color-dark: desaturate(darken($brand-color, 20%), 15%);
 $brand-color-really-dark: desaturate(darken($brand-color, 40%), 30%);
