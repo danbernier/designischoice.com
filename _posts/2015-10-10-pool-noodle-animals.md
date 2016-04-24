@@ -62,11 +62,12 @@ At the same time, we were looking for images to use. CWOS' theme for 2015 was "D
 
 With about 1,300 pieces per grid, you need a map.
 
-![](printout-photo.jpg)
+<div class='gallery'>
+  <img src="printout-photo.jpg" />
+  <img src="printout-photos.jpg" />
+</div>
 
-![](printout-photos.jpg)
-
-![](printout.png)
+<img src="printout.png" />
 
 ## Installation
 
@@ -94,29 +95,20 @@ Look at Dan G, noodling like a boss: bag of noodles in one hand, marker in the o
 
 Here they are, from left to right, which is about the reverse of the order they were completed in:
 
-![](01.1200.jpg)
-
-![](02.1200.jpg)
-
-![](03.1200.jpg)
-
-![](04.1200.jpg)
-
-![](05.1200.jpg)
-
-![](06.1200.jpg)
-
-![](07.1200.jpg)
-
-![](08.1200.jpg)
-
-![](09.1200.jpg)
-
-![](10.1200.jpg)
-
-![](11.1200.jpg)
-
-![](12.1200.jpg)
+<div class='gallery'>
+  <img src="01.1200.jpg" />
+  <img src="02.1200.jpg" />
+  <img src="03.1200.jpg" />
+  <img src="04.1200.jpg" />
+  <img src="05.1200.jpg" />
+  <img src="06.1200.jpg" />
+  <img src="07.1200.jpg" />
+  <img src="08.1200.jpg" />
+  <img src="09.1200.jpg" />
+  <img src="10.1200.jpg" />
+  <img src="11.1200.jpg" />
+  <img src="12.1200.jpg" />
+</div>
 
 ## After the Show
 

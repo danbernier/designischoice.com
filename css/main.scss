@@ -71,3 +71,22 @@ $on-laptop:        800px;
 .media .media-object {
   max-width: inherit;
 }
+
+
+.box-shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.gallery {
+  img {
+    display: inline-block;
+    max-width: 250px;  /* in case you want the first to be bigger */
+    margin: 12px;
+    @extend .box-shadow;
+  }
+
+  img ~ img {
+    max-width: 250px;
+  }
+}
+
