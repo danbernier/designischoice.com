@@ -234,3 +234,77 @@ h4 {
 #footer #logo a {
   font-weight: 700;
 }
+
+@media screen and (max-width: 768px) {
+
+  #columns {
+    width: 90vw;
+    grid-template-columns: 90vw;
+  }
+
+  #projects {
+    grid-template-columns: 19.5vw 19.5vw 19.5vw 19.5vw;
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+  }
+
+  .grid {
+    grid-template-columns: 19.5vw 19.5vw 19.5vw 19.5vw;
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+  }
+
+  #right {
+    height: inherit;
+    margin-left: -5vw;
+  }
+
+  #ribbon {
+    width: 100vw;
+    height: 2rem;
+    float: left;
+    background-image: url("images/choiceisdesignis.svg");
+    background-repeat: repeat-x;
+    background-size: 25%;
+  }
+
+  .big img {
+    width: 90vw;
+  }
+
+  .medium img {
+    width: 43vw;
+  }
+
+  .small img {
+    width: 19.5vw;
+  }
+
+  #projects .big img {
+    height: 90vw;
+  }
+
+  #projects .medium img {
+    height: 43vw;
+  }
+
+  #projects .small img {
+    height: 19.5vw;
+  }
+
+  #project .medium img:hover {
+    width: 43vw;
+  }
+
+  #project .small img:hover {
+    width: 19.5vw;
+  }
+
+  #logo, #logo h3, #logo a {
+    height: inherit;
+  }
+
+  #logoh1 {
+    font-size: 1.5rem;
+  }
+}
