@@ -13,10 +13,6 @@ body {
   grid-template-columns: 40vw 20vw;
 }
 
-#main {
-  width: 40vw;
-}
-
 #projects {
   display: grid;
   grid-template-columns: 8.5vw 8.5vw 8.5vw 8.5vw;
@@ -39,7 +35,6 @@ body {
 }
 
 #right {
-  width: 20vw;
   height: 100%;
   z-index: -1;
 }
@@ -83,7 +78,7 @@ body {
 }
 
 #footer #logo {
-    padding: 0;
+  padding: 0;
 }
 
 .big {
