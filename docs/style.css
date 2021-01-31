@@ -13,10 +13,6 @@ body {
   grid-template-columns: 40vw 20vw;
 }
 
-#main {
-  width: 40vw;
-}
-
 #projects {
   display: grid;
   grid-template-columns: 8.5vw 8.5vw 8.5vw 8.5vw;
@@ -39,7 +35,6 @@ body {
 }
 
 #right {
-  width: 20vw;
   height: 100%;
   z-index: -1;
 }
@@ -83,7 +78,7 @@ body {
 }
 
 #footer #logo {
-    padding: 0;
+  padding: 0;
 }
 
 .big {
@@ -233,4 +228,78 @@ h4 {
 
 #footer #logo a {
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+
+  #columns {
+    width: 90vw;
+    grid-template-columns: 90vw;
+  }
+
+  #projects {
+    grid-template-columns: 19.5vw 19.5vw 19.5vw 19.5vw;
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+  }
+
+  .grid {
+    grid-template-columns: 19.5vw 19.5vw 19.5vw 19.5vw;
+    grid-column-gap: 4vw;
+    grid-row-gap: 4vw;
+  }
+
+  #right {
+    height: inherit;
+    margin-left: -5vw;
+  }
+
+  #ribbon {
+    width: 100vw;
+    height: 2rem;
+    float: left;
+    background-image: url("images/choiceisdesignis.svg");
+    background-repeat: repeat-x;
+    background-size: 25%;
+  }
+
+  .big img {
+    width: 90vw;
+  }
+
+  .medium img {
+    width: 43vw;
+  }
+
+  .small img {
+    width: 19.5vw;
+  }
+
+  #projects .big img {
+    height: 90vw;
+  }
+
+  #projects .medium img {
+    height: 43vw;
+  }
+
+  #projects .small img {
+    height: 19.5vw;
+  }
+
+  #project .medium img:hover {
+    width: 43vw;
+  }
+
+  #project .small img:hover {
+    width: 19.5vw;
+  }
+
+  #logo, #logo h3, #logo a {
+    height: inherit;
+  }
+
+  #logoh1 {
+    font-size: 1.5rem;
+  }
 }
