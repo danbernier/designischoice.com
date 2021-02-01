@@ -5,6 +5,12 @@
 <h4>The line between noise and art is in how we choose.</h4>
 <div id="projects">
   <div class="big">
+    <a href="projects/ted-avatars">
+      <img src="projects/ted-avatars/avatars/dan.svg">
+      <div class="title">Generative Avatars for TED</div>
+    </a>
+  </div>
+  <div class="medium">
     <a href="projects/pool-noodle-animals">
       <img src="images/thumbs/pool-noodle-animals.jpg">
       <div class="title">Pool noodle animals</div>

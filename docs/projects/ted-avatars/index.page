@@ -1,0 +1,178 @@
+{% assign title = "Generative Avatars for TED" %}
+{% assign occurred_at = 'February 2019' %}
+{% assign event = 'ted.com' %}
+{% assign event_url = 'https://www.ted.com/people' %}
+{% project %}
+
+This project reminds me of the beauty of organic shapes.
+
+<div class='grid'>
+<div class='medium'><img src='avatars/1555008000.svg'></div>
+<div class='medium'><img src='avatars/1340674980.svg'></div>
+<div class='small'><img src='avatars/1499579880.svg'></div>
+<div class='small'><img src='avatars/1174503840.svg'></div>
+<div class='small'><img src='avatars/1506637380.svg'></div>
+<div class='small'><img src='avatars/1529752320.svg'></div>
+<div class='medium'><img src='avatars/1239712560.svg'></div>
+<div class='medium'><img src='avatars/1309917060.svg'></div>
+<div class='small'><img src='avatars/1752348360.svg'></div>
+<div class='small'><img src='avatars/1651345200.svg'></div>
+<div class='small'><img src='avatars/1606935300.svg'></div>
+<div class='small'><img src='avatars/1689447480.svg'></div>
+</div>
+
+It often speaks to me about the importance of small differences.
+
+<div class='grid'>
+<div class='medium'><img src='avatars/1587712320.svg'></div>
+<div class='medium'><img src='avatars/1602827280.svg'></div>
+
+<div class='small'><img src='avatars/1288536960.svg'></div>
+<div class='small'><img src='avatars/1423997760.svg'></div>
+<div class='small'><img src='avatars/1521619740.svg'></div>
+<div class='small'><img src='avatars/1589372460.svg'></div>
+
+<div class='medium'><img src='avatars/1327706460.svg'></div>
+<div class='medium'><img src='avatars/1354587660.svg'></div>
+
+<div class='small'><img src='avatars/1632262560.svg'></div>
+<div class='small'><img src='avatars/1724984880.svg'></div>
+<div class='small'><img src='avatars/1233703680.svg'></div>
+<div class='small'><img src='avatars/1439044080.svg'></div>
+
+<div class='small'><img src='avatars/1559837040.svg'></div>
+<div class='small'><img src='avatars/1192466400.svg'></div>
+<div class='small'><img src='avatars/1608181500.svg'></div>
+
+</div>
+
+It makes me laugh to see how fun a random assemblage can often be.
+
+<div class='grid'>
+<div class='medium'><img src='avatars/1257842100.svg'></div>
+<div class='medium'><img src='avatars/1663710960.svg'></div>
+
+<div class='small'><img src='avatars/1281377100.svg'></div>
+<div class='medium'><img src='avatars/1734121500.svg'></div>
+<div class='small'><img src='avatars/1233689100.svg'></div>
+
+<div class='small'><img src='avatars/1438498200.svg'></div>
+<div class='small'><img src='avatars/1748963700.svg'></div>
+<div class='small'><img src='avatars/1313553540.svg'></div>
+<div class='small'><img src='avatars/1538590740.svg'></div>
+
+<div class='medium'><img src='avatars/1686629340.svg'></div>
+<div class='medium'><img src='avatars/1430850420.svg'></div>
+</div>
+
+While working at [TED](https://www.ted.com), I was part of a project to replace their default avatar,
+a gray silhouette, with something better.
+
+# Goal
+
+You generate avatars so your site looks more interesting than a sea of gray
+silhouettes, but people should still want to upload their photo.
+
+Like any avatar, the images should be clear enough that you can easily tell
+them apart, even at small sizes, and they should be stable - you can't identify
+a person from an abstract image that always changes. 
+
+The only datum we had for every TED profile was the timestamp of when the
+person signed up. (You don't have to provide a name when you sign up, and some
+profiles created through other systems don't have an email address.) 
+
+# Approach
+
+That last constraint was the first to inform the initial design: [Tara Lynn
+Connelly](http://www.taralynnconnelly.com) produced 24 proof-of-concept images
+that combined the hour the account was created in TED's logo typeface,
+Helvetica, with an organic shape, and a red circle symbolizing the one TED
+speakers stand on. The hour numbers ran from 1 through 12, and different colors
+for the organic shape provided an AM and a PM variant.
+
+When you can only have one of 24 avatars, it's inevitable you'll have the same
+one as someone else.  On a page listing only 10 profiles, [the probability that
+at least two of them have the same
+avatar](https://en.wikipedia.org/wiki/Birthday_problem) is:
+
+> 1 - (24/24 * 23/24 * 22/24 * ... * 15/24)
+
+That comes out to 89%. So the next step was to generate enough avatars that
+you'd probably never find anyone with the same as you.
+
+To ensure you always have the same avatar, there are two approaches: generate
+images randomly and store them, or create a deterministic algorithm that
+generates images from profile data. We chose the latter because it's cheaper
+and simpler, though it means any change to the algorithm would change
+everyone's avatars.
+
+<!--
+    def birthday(pigeons, boxes)
+      for_print = []
+      parts = boxes.downto(boxes-(pigeons-1)).map { |n|
+        for_print << "#{n}/#{boxes}"
+        n / boxes.to_f
+      }
+      puts "1 - (#{for_print.join(' * ')})"
+
+      1.0 - parts.reduce(:*)
+    end
+-->
+
+<!--
+TODO
+One constraint we discovered only once we'd been in development for a while was
+that the images should not change too gradually, second-to-second or
+minute-to-minute, because ted.com/people would let you sort profiles by when
+they were created, and since the creation date was the only input to the
+algorithm, if the algorithm varied its output too little, that page would show
+a bunch of avatars that had only minimal variation &em; it wasn't enough that
+they be different, they had to be obviously different. 
+-->
+
+
+
+# Build
+
+Tara asked her teammates [Joe Bartlett](https://redopop.com) and me for help.
+
+Since the primary target platform was ted.com, Joe suggested we generate SVGs,
+producing a crisp image at any resolution and dimension, from a tiny file
+that's fast to download. A random example I just picked weighs only 1.37 KB.
+
+This was a new approach for me: rather than expressing calculations in code, we
+generated SVGs via text templates. Tara already grasped the kinds of variations
+she wanted, and we were able to express that as a set of string interpolations
+with some logic transforming the input date into colors, radii, opacities,
+rotations, etc, as needed; the organic shapes and Helvetica number shapes were
+stored in an array of path coordinates, and the input date also became an index
+into it.
+
+This made the SVG generation process and its code very legible ("how does this
+number become that SVG?"), even if it obscured the logic of the generative
+algorithm ("WHY does this number become that SVG?").
+
+
+
+# Epilogue
+
+<!--
+TODO
+<How do I tell this part of the story? ...DO I tell it?>
+<Do I tell the SVG-to-PNG part of the story? The React part?>
+
+<How about the color-change part? There's an interesting story there about
+generative projects and apparent diversity. And it'd be cool to have the
+code have a toggle for which color scheme> TODO
+-->
+
+Shortly before the avatars were deployed to production, there was a shift in
+design direction, and the color palette was changed to be more blue. Here, I've
+included examples from the original palette out of sentimentality, and to
+preserve that version somewhere, but you can see the final versions at
+[ted.com/people](https://www.ted.com/people).
+
+You can see a much broader range of avatars in the original colors at [Joe's
+demo site](https://fun.redopop.com/avatars/).
+
+{% endproject %}
