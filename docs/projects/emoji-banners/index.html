@@ -1,0 +1,270 @@
+<style>
+.banner img {
+  width: 35px;
+}
+</style>
+
+
+
+<html>
+  <head>
+    <title>Emoji banners · Design is Choice</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/javascript/p5.min.js"></script>
+  </head>
+  <body>
+    <div id="columns">
+      <div id="left">
+        
+<div id="logo">
+  <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
+</div>
+<div id="project">
+  <div class="title">
+    <h1>Emoji banners</h1>
+    <p>
+    March 2019
+    
+    </p>
+  </div>
+  
+<p>https://github.com/danbernier/emoji-banner</p>
+
+<p>Sometimes a prank 
+opens up a possibility
+to do an old thing in a new way.</p>
+
+<p>At TED, we chatted in <a href="https://flowdock.com/">flowdock</a> (it’s like Slack, but
+less popular).</p>
+
+<p>The team developed a peculiar appreciation for custom emoji, specifically for
+how nice they look. I think this is because flowdock lets you control
+(independent from the text) the size of emoji, and the team had developed a
+culture of setting that slider to “very, very large”. The ugly parts of a
+custom emoji will be very apparent.</p>
+
+<p>When you hover over a message, flowdock changes its background color from white
+to gray, so an emoji with a white background will have a white box around it.
+Most of the team was able to make the background of an image transparent, but
+sometimes, through a lack of skill or a lack of patience, or maybe because they
+just didn’t think about the hover, someone would upload an emoji with a white
+background, and take some heat for it.</p>
+
+<div class="medium white">
+<img src="whiskey-dont-panic.png" alt="A hover reveals an ugly white background" />
+</div>
+
+<p>Like a meme or a fever, every few months people would argue about custom emoji
+with white backgrounds. In one of these outbreaks, some cheeky emojist made an
+invisible animated emoji of the party parrot that you could only see if you
+hovered over the message.</p>
+
+<div class="small">
+<img src="emoji/invisible-parrot.gif" alt=":invisible-parrot:" style="background-color: #ddd; padding: 20px" />
+</div>
+
+<p>Somebody else took the idea one step further and made a <code>:transparent:</code> emoji
+that was just a 64x64 transparent image. Take that, emoji police! 🖕🚔</p>
+
+<p>That last step opened up a new possibility: you could make a message entirely
+from emoji, but where each emoji stood not as its own image-word, but as a
+pixel in a grid of fixed-width emoji, spaced out with the <code>:transparent:</code>
+emoji:</p>
+
+<pre><code>:wave::transparent::transparent::transparent:
+:wave::transparent::transparent::transparent::wave:
+:wave::transparent::transparent::transparent::transparent:
+:wave::wave::wave::transparent::wave:
+:wave::transparent::wave::transparent::wave:
+:wave::transparent::wave::transparent::wave:
+:transparent::transparent::transparent::transparent::transparent:
+:transparent::transparent::transparent::transparent::transparent:
+</code></pre>
+
+<p>…and it would render like this:</p>
+
+<div class="banner">
+<img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><br />
+<img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/wave.png" /><img src="emoji/wave.png" /><img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><br />
+<img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><br />
+<img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/wave.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+</div>
+
+<p>But no one’s going to do that by hand, so I wrote <a href="https://github.com/danbernier/emoji-banner/blob/0e1cc6c66c628eacc443b0874a6db475fcbb2090/play.rb">a ruby
+script</a>
+to do it. The code is a mess, but running it is easy – here’s the command to
+produce that example:</p>
+
+<pre><code>dan@tower-of-babylon emoji-banner % ruby play.rb hi wave
+</code></pre>
+
+<p>The first argument, “hi”, is the message (it can be wrapped in quotes if the
+message contains spaces), and the emoji to render it in is the last argument.</p>
+
+<p>The “font” was contributed by <a href="http://www.taralynnconnelly.com/">Tara Lynn
+Connelly</a>, and I made some tweaks.  Each
+glyph can be 7 “pixels” high, and is specified semi-visually, as an array of 7
+ruby strings of any width (though all strings for each glyph must be of equal
+length); the renderer adds its own spacing and kerns the result. Here’s
+the code for “i” and “j”:</p>
+
+<pre><code>'i' =&gt; [
+  'o',
+  ' ',
+  'o',
+  'o',
+  'o',
+  ' ',
+  ' '
+],   
+
+'j' =&gt; [
+  '  o',
+  '   ',
+  '  o',
+  '  o',
+  '  o',
+  'o o',
+  'ooo'
+],  
+</code></pre>
+
+<h1 id="gallery">Gallery</h1>
+
+<p>Even with a smaller emoji and a full-width message window, the banner’s text is
+constrained, and in the earliest experiments, the banner’s message was
+reinforced by the emoji.</p>
+
+<div class="grid">
+<div class="medium"><img src="fine-fine.png" /></div>
+<div class="medium"><img src="ty.png" /></div>
+<div class="medium"><img src="hah-alex.png" /></div>
+</div>
+
+<p>But the two layers can diverge, carrying messages that inform and complement
+each other.</p>
+
+<div class="grid">
+<div class="big"><img src="omfg-hrviolation.png" /></div>
+<div class="medium"><img src="yiss-ty.png" /></div>
+<div class="medium"><img src="lol-fine.png" /></div>
+</div>
+
+<p>They can even carry different, contrasting messages.</p>
+
+<div class="grid">
+<div class="medium"><img src="no-dice.png" /></div>
+<div class="medium"><img src="fine-lololol.png" /></div>
+</div>
+
+<div class="banner">
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><br />
+<img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><br />
+<img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><img src="emoji/no.gif" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+</div>
+
+<p>As you might expect from a tool for creating message banners of emoji, a tool
+built for spectacle and volume, subtlety was a less common result.</p>
+
+<div class="banner">
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><br />
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><br />
+<img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<br />
+<img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><br />
+<img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/party.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+<img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/partygritty.gif" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
+</div>
+
+<p>(There was an undercurrent of anarchy and the ridiculous in the team’s culture
+that was wonderful for morale.)</p>
+
+<div class="medium"><img src="obey-anarchy.png" /></div>
+
+<h1 id="section">🐞🐝🦟🕷🐛🐜</h1>
+
+<p>There were two difficulties with using the script in flowdock.</p>
+
+<p>The first was a bug with how flowdock renders native emoji: they won’t all
+appear at the same size. Here, the message “luv” in ❤️ comes out lumpy and
+illegible:</p>
+
+<div class="medium"><img src="bad-luv.png" /></div>
+
+<p>The second was flowdock’s “inbox” feature, which narrows the area for viewing a
+message, causing it to wrap incorrectly, making the banner message illegible.
+Ironically, this was even worse when viewing the emoji at a large setting.
+FIXME reword that last sentence.</p>
+
+<div class="grid">
+<div class="big"><img src="hmm.png" /></div>
+<div class="medium"><img src="hmm-wrapped.png" /></div>
+</div>
+
+<h1 id="next-steps">Next Steps</h1>
+
+<p>I’d like to port this to javascript and have a tool here so anyone can
+noise-pollute their professional chat, and pair it with simple instructions for
+adding a <code>:transparent:</code> emoji to your Slack. These messages will render on any
+chat platform you use, if it supports custom emoji with the <code>:emoji-name:</code>
+colon syntax.</p>
+
+<p>The “font” lacks characters. Punctuation and numbers could add expressiveness
+to the messages. I’d like to make it easier to prepare a new font, add new
+glyphs, and even change fonts on the fly.</p>
+
+</div>
+
+      </div>
+      <div id="right">
+        <div id="ribbon">
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-columns">
+        <div id="logo">
+          <h3>DESIGN <i>is</i> CHOICE<br>
+            <i>by</i> <a href="https://danbernier.com/">DAN BERNIER</a></h3>
+          <p>© <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+        </div>
+        <div id="links">
+          <!--
+          <a href="#">About</a><br>
+          <a href="#">Projects</a>
+          -->
+        </div>
+        <div id="social">
+          <a href="https://github.com/danbernier/designischoice.com"><img src="/images/github.svg"></a>
+          <a href="https://instagram.com/designischoice"><img src="/images/instagram.svg"></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
