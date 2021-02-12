@@ -1,0 +1,26 @@
+{% assign title = title %}
+{% assign occurred_at = occurred_at %}
+{% assign event = event %}
+{% assign event_url = event_url %}
+{% page %}
+<div id="logo">
+  <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
+</div>
+<div id="project">
+  <div class="title">
+    <h1>{{ title }}</h1>
+    <p>
+    {{ occurred_at }}
+    {% if event %}
+      //
+      {% if event_url %}
+        <a href="{{ event_url }}">{{ event }}</a>
+      {% else %}
+        {{ event }}
+      {% endif %}
+    {% endif %}
+    </p>
+  </div>
+  {{ content }}
+</div>
+{% endpage %}

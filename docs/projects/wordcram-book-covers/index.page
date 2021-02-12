@@ -1,0 +1,30 @@
+{% assign title = 'WordCram book covers' %}
+{% assign occurred_at = 'Dec 2013' %}
+{% project %}
+
+After talking about John Brunner with a friend, I saw that "Stand on Zanzibar"
+was [reprinted in August
+2011](https://www.goodreads.com/book/show/9663875-stand-on-zanzibar), with a
+very [WordCram](https://github.com/danbernier/wordcram)-y cover:
+
+<div class='medium'><img alt='Stand on Zanzibar' src='imgs/zanzibar.png'></div>
+
+Book covers was always one of the things people talked about using WordCram
+for, so I thought I'd try making a fake Borges cover. I think they came out
+well enough to prove out the idea. I'm not sold on the gradient - I like how
+the solid orange one came out. But I like the idea of having random words
+(straight out of the Library of Babel) on the cover.
+
+The typeface I used was Bebas Neue, which, it seems, you can never go wrong
+with.
+
+<div class='grid'>
+<div class='medium'><img src='imgs/orange.png'></div>
+<div class='medium'><img src='imgs/orange-dark.png'></div>
+<div class='medium'><img src='imgs/orange-gradient.png'></div>
+<div class='medium'><img src='imgs/green.png'></div>
+<div class='medium'><img src='imgs/green-dark.png'></div>
+<div class='medium'><img src='imgs/green-gradient.png'></div>
+<div class='medium'><img src='imgs/yellow.png'></div>
+</div>
+{% endproject %}

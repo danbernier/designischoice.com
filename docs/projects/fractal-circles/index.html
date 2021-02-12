@@ -8,82 +8,107 @@
   <body>
     <div id="columns">
       <div id="left">
-        <div id="logo">
-          <a href="/"<h3>DESIGN <i>is</i> CHOICE</h3></a>
-        </div>
-        <div id="project">
-          <div class="title">
-            <h1>Fractal Circles</h1>
-            <p>2014 • <a href="#">Re:GENERATE</a> (41.310726, -72.929916)</p>
-          </div>
+        
+<div id="logo">
+  <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
+</div>
+<div id="project">
+  <div class="title">
+    <h1>Fractal Circles</h1>
+    <p>
+    Aug 2014
+    
+      //
+      
+        <a href="http://web.archive.org/web/20150819084441/http://grovenewhaven.com/art-of-code-regenerate/">Re:GENERATE</a>
+      
+    
+    </p>
+  </div>
+  
+<p>In August of 2014, I participated in
+<a href="http://web.archive.org/web/20150819084441/http://grovenewhaven.com/art-of-code-regenerate/">Re:GENERATE</a>,
+a show featuring computer-generated art. I made, among other things, a
+generative series for the event, that I named Fractal Circles.</p>
 
-          <p>In August of 2014, I participated in <a href="http://web.archive.org/web/20150819084441/http://grovenewhaven.com/art-of-code-regenerate/">Re:GENERATE</a>, a show featuring computer-generated art. I made, among other things, a
-          generative series for the event, that I named Fractal Circles.</p>
+<div class="grid">
+  <div class="medium white"><img src="02.png" /></div>
+  <div class="medium white"><img src="03.png" /></div>
+  <div class="medium white"><img src="04.png" /></div>
+  <div class="medium white"><img src="05.png" /></div>
+  <div class="small white"><img src="06.png" /></div>
+  <div class="small white"><img src="07.png" /></div>
+  <div class="small white"><img src="08.png" /></div>
+  <div class="small white"><img src="09.png" /></div>
+  <div class="medium white"><img src="10.png" /></div>
+  <div class="small white"><img src="11.png" /></div>
+  <div class="small white"><img src="12.png" /></div>
+  <div class="medium white"><img src="13.png" /></div>
+  <div class="medium white"><img src="14.png" /></div>
+</div>
 
-          <div class="grid">
-            <div class="medium white"><img src="02.png"></div>
-            <div class="medium white"><img src="03.png"></div>
-            <div class="medium white"><img src="04.png"></div>
-            <div class="medium white"><img src="05.png"></div>
-            <div class="small white"><img src="06.png"></div>
-            <div class="small white"><img src="07.png"></div>
-            <div class="small white"><img src="08.png"></div>
-            <div class="small white"><img src="09.png"></div>
-            <div class="medium white"><img src="10.png"></div>
-            <div class="small white"><img src="11.png"></div>
-            <div class="small white"><img src="12.png"></div>
-            <div class="medium white"><img src="13.png"></div>
-            <div class="medium white"><img src="14.png"></div>
-          </div>
+<p>It’s a simple recursive algorithm over a region of the sketch:</p>
 
-          <p>It’s a simple recursive algorithm over a region of the sketch:</p>
-          <ul>
-            <li>Should we recurse?
-              <ul>
-                <li>Yes, recurse:
-                  <ul>
-                    <li>Is the region we’re looking at wider than tall? (The first time, this is the whole sketch.)
-                      <ul>
-                        <li>Yes: split it into halves, vertically, and recurse into it.</li>
-                        <li>No: split it into halves, horizontally, and recurse into it.</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>No, stop recursing:
-                  <ul>
-                    <li>Should we draw a circle in this region?
-                      <ul>
-                        <li>Yes: pick a circle type (solid or hollow) and draw it.</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <p>This generates a surprisingly wide variety of shapes, some very natural-looking.</p>
-          <p>There are three open-ended questions:</p>
-          <ul>
-            <li>Should we recurse?</li>
-            <li>Should we draw a circle?</li>
-            <li>What kind of circle?</li>
-          </ul>
-          <p>If you decide to recurse every other time, and always draw a circle, and alternate the circles types, you get this image, which I made to help explain:</p>
-          <div class="big">
-            <img src="explanation.png">
-          </div>
-          <p>If you let yourself pick the <i>type</i> of circle randomly, you’re left with two questions: whether to recurse, and whether to draw a circle. Answering those questions randomly, and controlling their probability, can generate whole families of images.</p>
-          <p>Here are 144 tiny fractal circle images. The probability of recursing decreases as we move from left to right, and the probability of drawing a circle increases as we move from top to bottom.</p>
-          <div class="big white">
-            <img src="orthogonalities.png">
-          </div>
-          <p>Here’s a <a href="https://p5js.org">p5.js</a> version of it, where the probabilty-to-recurse increases as the hour passes, and the probability-to-draw increases as the minute passes:</p>
+<ul>
+  <li>Should we recurse?
+    <ul>
+      <li>Yes, recurse:
+        <ul>
+          <li>Is the region we’re looking at wider than tall? (The first time, this is the whole sketch.)
+            <ul>
+              <li>Yes: split it into halves, vertically, and recurse into it.</li>
+              <li>No: split it into halves, horizontally, and recurse into it.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>No, stop recursing:
+        <ul>
+          <li>Should we draw a circle in this region?
+            <ul>
+              <li>Yes: pick a circle type (solid or hollow) and draw it.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-          <div id='sketchHolder' class='box-shadow'></div>
+<p>This generates a surprisingly wide variety of shapes, some very natural-looking.</p>
 
-          <script id='sketchSource'>
-            function Circle(sizePercent) {
+<p>There are three open-ended questions:</p>
+
+<ul>
+  <li>Should we recurse?</li>
+  <li>Should we draw a circle?</li>
+  <li>What kind of circle?</li>
+</ul>
+
+<p>If you decide to recurse every other time, and always draw a
+circle, and alternate the circles types, you get this image, which
+I made to help explain:</p>
+
+<div class="big"><img src="explanation.png" /></div>
+
+<p>If you let yourself pick the <em>type</em> of circle randomly, you’re left with two
+questions: whether to recurse, and whether to draw a circle. Answering those
+questions randomly, and controlling their probability, can generate whole
+families of images.</p>
+
+<p>Here are 144 tiny fractal circle images. The probability of recursing
+decreases as we move from left to right, and the probability of drawing a
+circle increases as we move from top to bottom.</p>
+
+<div class="big white"><img src="orthogonalities.png" /></div>
+
+<p>Here’s a <a href="https://p5js.org">p5.js</a> version of it, where the
+probabilty-to-recurse increases as the hour passes, and the
+probability-to-draw increases as the minute passes:</p>
+
+<div id="sketchHolder" class="box-shadow"></div>
+<script id="sketchSource">
+function Circle(sizePercent) {
   this.strokeWeightPercentOfSize = sizePercent;
 
   this.draw = function(top, left, size) {
@@ -159,8 +184,11 @@ function recurse(left, top, right, bottom) {
     }
   }
 }
-          </script>
-        </div>
+</script>
+
+
+</div>
+
       </div>
       <div id="right">
         <div id="ribbon">

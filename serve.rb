@@ -2,6 +2,12 @@ require 'sinatra'
 
 # set :public_folder, __dir__ + '/docs'
 
+require_relative 'render'
+before do
+  # load 'render.rb'
+  render_all_pages
+end
+
 get '/*' do
   path = File.join('docs', params[:splat])
   if Dir.exist?(path)

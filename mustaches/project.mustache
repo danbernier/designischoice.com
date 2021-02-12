@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Design is Choice</title>
+    <title>{{title}} · Design is Choice</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/style.css">
     <script src="/javascript/p5.min.js"></script>
@@ -8,35 +8,19 @@
   <body>
     <div id="columns">
       <div id="left">
-        
-<div id="logo">
-  <h1>DESIGN <i>is</i> CHOICE</h1>
-</div>
-<h4>The line between noise and art is in how we choose.</h4>
-<div id="projects">
-  <div class="big">
-    <a href="projects/pool-noodle-animals">
-      <img src="images/thumbs/pool-noodle-animals.png" />
-      <div class="title">Pool noodle animals</div>
-    </a>
-    <div class="date">Oct 2015 // City Wide Open Studios</div>
-  </div>
-  <div class="medium">
-    <a href="projects/fractal-circles">
-      <img src="images/thumbs/fractal-circles.png" />
-      <div class="title">Fractal Circles</div>
-    </a>
-    <div class="date">Aug 2014 // Re:Generate</div>
-  </div>
-  <div class="medium">
-    <a href="projects/wordcram-book-covers">
-      <img src="images/thumbs/wordcram-book-covers.png" />
-      <div class="title">WordCram Book Covers</div>
-    </a>
-    <div class="date">Dec 2013</div>
-  </div>
-</div>
+        <div id="logo">
+          <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
+        </div>
+        <div id="project">
+          <div class="title">
+            <h1>{{title}}</h1>
+            {{#event_html?}}
+            <p>{{{event_html}}}</p>
+            {{/event_html?}}
+          </div>
 
+          {{{all_body_html}}}
+        </div>
       </div>
       <div id="right">
         <div id="ribbon">
@@ -48,7 +32,7 @@
         <div id="logo">
           <h3>DESIGN <i>is</i> CHOICE<br>
             <i>by</i> <a href="https://danbernier.com/">DAN BERNIER</a></h3>
-          <p>© 2021</p>
+          <p>© {{ current_year }}</p>
         </div>
         <div id="links">
           <!--

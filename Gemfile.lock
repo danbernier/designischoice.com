@@ -1,11 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    kramdown (2.3.0)
+      rexml
+    liquid (5.0.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rexml (3.2.4)
     ruby2_keywords (0.0.4)
     sinatra (2.1.0)
       mustermann (~> 1.0)
@@ -18,6 +22,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  kramdown
+  liquid
   sinatra
 
 BUNDLED WITH
