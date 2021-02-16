@@ -8,7 +8,7 @@ class PageClass < Liquid::Block
   end
 
   def layout_template
-    File.read('page.liquid')
+    File.read('templates/page.liquid')
   end
 
   def render(context)
@@ -28,7 +28,7 @@ class ProjectClass < Liquid::Block
   end
 
   def layout_template
-    File.read('project.liquid')
+    File.read('templates/project.liquid')
   end
 
   def render(context)
