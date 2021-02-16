@@ -3,12 +3,8 @@ require 'kramdown'
 
 class PageClass < Liquid::Block
   def initialize(tagname, tag_args_as_string, context)
-    @template = Liquid::Template.parse(layout_template)
+    @template = Liquid::Template.parse(File.read('templates/page.liquid'))
     super
-  end
-
-  def layout_template
-    File.read('templates/page.liquid')
   end
 
   def render(context)
@@ -23,17 +19,12 @@ Liquid::Template.register_tag('page', PageClass)
 
 class ProjectClass < Liquid::Block
   def initialize(tagname, tag_args_as_string, context)
-    @template = Liquid::Template.parse(layout_template)
+    @template = Liquid::Template.parse(File.read('templates/project.liquid'))
     super
-  end
-
-  def layout_template
-    File.read('templates/project.liquid')
   end
 
   def render(context)
     rendered = Kramdown::Document.new(super).to_html
-
     @template.render(
       context.scopes.reduce(&:merge).merge(
         'content' => rendered,
