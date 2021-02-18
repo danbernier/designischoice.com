@@ -1,6 +1,8 @@
 <style>
 .banner img {
-  width: 35px;
+  // this is based on there being at most 19 emoji in a row
+  width: 5.26%;
+  // (...I counted)
 }
 </style>
 
@@ -194,9 +196,6 @@ appear at the same size. Here, the message "luv" in ❤️ comes out lumpy and
 illegible:
 
 <div class='medium'><img src='bad-luv.png'></div>
-
-In fact, if you're viewing this on a mobile device right now, you'll probably
-see a similar bug. (I'm working on it.)
 
 The second was Flowdock's "inbox" feature, which narrows the area for viewing a
 message, causing it to wrap incorrectly, making the banner message illegible.
