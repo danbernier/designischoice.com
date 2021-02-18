@@ -183,9 +183,6 @@ that was wonderful for morale.)
 <div class='medium'><img src='obey-anarchy.png'></div>
 
 
-
-
-
 # 🐞🐝🦟🕷🐛🐜
 
 There were two difficulties with using the script in flowdock. 
@@ -195,6 +192,9 @@ appear at the same size. Here, the message "luv" in ❤️ comes out lumpy and
 illegible:
 
 <div class='medium'><img src='bad-luv.png'></div>
+
+In fact, if you're viewing this on a mobile device right now, you'll probably
+see a similar bug. (I'm working on it.)
 
 The second was flowdock's "inbox" feature, which narrows the area for viewing a
 message, causing it to wrap incorrectly, making the banner message illegible.
