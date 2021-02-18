@@ -65,7 +65,7 @@ Here's a <a href="https://p5js.org">p5.js</a> version of it, where the
 probabilty-to-recurse increases as the hour passes, and the
 probability-to-draw increases as the minute passes:
 
-<div id='sketchHolder' class='box-shadow'></div>
+<div id='sketchHolder' style='width:100%;height:100%'></div>
 <script id='sketchSource'>
 function Circle(sizePercent) {
   this.strokeWeightPercentOfSize = sizePercent;
@@ -86,19 +86,24 @@ function Circle(sizePercent) {
 }
 
 function setup() {
-  let canvas = createCanvas(680, 720);
-  canvas.parent('sketchHolder');
+  let sketchHolder = document.getElementById("sketchHolder");
+  sketchHolder.textContent = '';
+  let sketchWidth = sketchHolder.offsetWidth;
+  let canvas = createCanvas(sketchWidth, sketchWidth + 40);
+  canvas.parent("sketchHolder");
 
   noStroke();
   frameRate(2);
 };
+window.addEventListener('resize', setup);
 
 function draw() {
   pStopRecursing = norm(minute(), 59, 0); //0.35;
   pDrawACircle = norm(second(), 0, 59); // 0.15;
 
   background(255);
-  recurse(20, 20, 680-40, 680-40);
+  let sketchWidth = document.getElementById("sketchHolder").clientWidth;
+  recurse(20, 20, sketchWidth-40, sketchWidth-40);
 
   fill(0);
   textAlign(CENTER);
