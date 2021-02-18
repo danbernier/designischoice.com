@@ -199,7 +199,7 @@ illegible:
 The second was Flowdock's "inbox" feature, which narrows the area for viewing a
 message, causing it to wrap incorrectly, making the banner message illegible.
 Ironically, this was even worse when viewing the emoji at a large setting.
-FIXME reword that last sentence. 
+<!-- FIXME reword that last sentence.  -->
 
 <div class='grid'>
 <div class='big'><img src='hmm.png'></div>
