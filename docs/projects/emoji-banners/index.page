@@ -53,7 +53,7 @@ from emoji, but where each emoji stood not as its own image-word, but as a
 pixel in a grid of fixed-width emoji, spaced out with the `:transparent:`
 emoji:
 
-    :wave::transparent::transparent::transparent:
+    :wave::transparent::transparent::transparent::transparent:
     :wave::transparent::transparent::transparent::wave:
     :wave::transparent::transparent::transparent::transparent:
     :wave::wave::wave::transparent::wave:
