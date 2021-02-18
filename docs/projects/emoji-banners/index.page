@@ -1,8 +1,8 @@
 <style>
 .banner img {
-  // this is based on there being at most 19 emoji in a row
+  /* this is based on there being at most 19 emoji in a row */
   width: 5.26%;
-  // (...I counted)
+  /* (...I counted) */
 }
 </style>
 
