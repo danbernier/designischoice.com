@@ -12,6 +12,13 @@
     <div class="date">City Wide Open Studios 2015</div>
   </div>
   <div class="medium">
+    <a href="projects/tile-swapping">
+      <img src="projects/tile-swapping/thumb.png">
+      <div class="title">Tile swapping</div>
+    </a>
+    <div class='date'>Projector Night at Baobab Tree Studios</div>
+  </div>
+  <div class="medium">
     <a href="projects/wordcram-book-covers">
       <img src="images/thumbs/wordcram-book-covers.png">
       <div class="title">WordCram Book Covers</div>

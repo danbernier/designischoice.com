@@ -1,0 +1,292 @@
+<html>
+  <head>
+    <title>Tile Swapping · Design is Choice</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/javascript/p5.min.js"></script>
+  </head>
+  <body>
+    <div id="columns">
+      <div id="left">
+        
+<div id="logo">
+  <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
+</div>
+<div id="project">
+  <div class="title">
+    <h1>Tile Swapping</h1>
+    <p>
+    May 28, 2015
+    
+      //
+      
+        Projector Night at Baobab Tree Studios, New Haven
+      
+    
+    </p>
+  </div>
+  
+<div id="sketchHolder" style="width:100%"></div>
+<script id="sketchSource">
+function ring(items) {
+  let index = 0;
+  return {
+    current: function() {
+      return items[index];
+    },
+    next: function() {
+      index = (index + 1) % items.length;
+      return this.current();
+    }
+  };
+}
+
+let imagePaths = [
+  'imgs/orange-sky.jpg',
+  'imgs/city-buildings.jpg',
+  'imgs/person-by-docks.jpg',
+  'imgs/shower-face.jpg',
+  'imgs/sunflower.jpg',
+  'imgs/lighthouse.jpg',
+  'imgs/winter-trees.jpg',
+  'imgs/purple-leaves.jpg',
+  'imgs/graffiti-yogi.jpg',
+  'imgs/glass-wall.jpg',
+  'imgs/floral-curtain.jpg',
+  'imgs/nepal.jpg',
+  'imgs/barbershop.jpg',
+  'imgs/car.jpg',
+];
+let rawImages = [];
+let sizedImages = [];
+let sourceImageRing;
+
+function tile(img, x, y) {
+  let newImg;
+  let shadeAlpha = 0;
+  let dShadeAlpha = 5;
+  let addingShade = false;
+  let removingShade = false;
+
+  return {
+    draw: function() {
+      image(img, x, y);
+
+      if (addingShade || removingShade) {
+        shadeAlpha += addingShade ? dShadeAlpha : -dShadeAlpha;
+        push();
+        fill(0, shadeAlpha);
+        noStroke();
+        rect(x, y, img.width, img.height);
+        pop();
+
+        if (shadeAlpha >= 255) {
+          img = newImg;
+          newImg = null;
+          addingShade = false;
+          removingShade = true;
+        } else if (shadeAlpha <= 0) {
+          removingShade = false;
+        }
+      }
+    },
+    y: y,
+    changeTo: function(newImage) {
+      newImg = newImage;
+      addingShade = true;
+    }
+  };
+}
+
+let tileSize;
+let padding;
+let tileChangesPerFrame = 15; // 3/16 of total
+let framesPerPic = 500; // TODO: change to ms
+let framesPerTile = 70; // TODO: change to ms
+let readyToStart = false;
+
+let tiles = [];
+let theCanvas;
+
+function preload() {
+  imagePaths.forEach(function(path, index) {
+    loadImage(path, img => { rawImages[index] = img; });
+  });
+}
+
+function setup() {
+  let sketchHolder = document.getElementById("sketchHolder");
+  sketchHolder.textContent = '';
+  let sketchWidth = sketchHolder.offsetWidth;
+  theCanvas = createCanvas(sketchWidth, (sketchWidth / 1220) * 980);
+  theCanvas.parent("sketchHolder");
+
+  // 1 tile is as wide as 5 gaps; 10 tiles + 11 gaps = 61 units:
+  padding = sketchWidth / 61.0;
+  tileSize = padding * 5;
+  let fullTileSize = tileSize + padding;
+
+  sizedImages = [];
+  tiles = [];
+  sourceImageRing = ring(sizedImages);
+  rawImages.forEach(function(img, index) {
+    let resized = img.get();
+    resized.resize(sketchWidth, 0);
+    sizedImages[index] = resized;
+
+    if (index == 0) {
+      for (let x = 0; x < width + fullTileSize; x += fullTileSize) {
+        for (let y = 0; y < height + fullTileSize; y+= fullTileSize) {
+          let randX = round(random(width - tileSize));
+          let snap = sourceImageRing.current().get(randX, y, tileSize, tileSize);
+          tiles.push(tile(snap, x + padding, y + padding));
+        }
+      }
+      readyToStart = true;
+    }
+  });
+};
+window.addEventListener('resize', setup);
+
+function draw() {
+  background(0);
+  if (readyToStart) {
+
+    if (frameCount % framesPerPic == 0) {
+      sourceImageRing.next();
+    }
+                
+    if (frameCount % framesPerTile == 0) {
+      for (let i = 0; i < tileChangesPerFrame; i++) {
+        let tile = tiles[floor(random(tiles.length))];
+        let randX = round(random(width - tileSize));
+        let snap = sourceImageRing.current().get(randX, tile.y - padding, tileSize, tileSize);
+        tile.changeTo(snap);
+      }
+    }
+    
+    tiles.forEach(function(tile) {
+      tile.draw();
+    });
+  }
+};
+</script>
+
+<!--
+> baobab tree studios, part of The Grove, has been putting on Projector Night Art
+Shows. VJs and video artists light up the windows and walls with colored light:
+animation, film, music videos, abstracts of all sorts.
+-->
+
+<p>This piece reminds me that the best effects often come from simple ideas.</p>
+
+<p>A photo is scrambled into 80 random tiny square crops. About once per second,
+some of them cross-fade into a new random crop from the source photo. About
+every nine seconds, the source image changes, and the tone and texture of the
+piece immediately shift, becoming a blend of the two source images.</p>
+
+<p>Tiles are chosen for a swap at random, so a given tile may continue to display
+a crop from the first image even once a third source image has been chosen, or
+even a fourth, or fifth; while there is no mechanism to ensure tiles change,
+random chance is effective with enough time.</p>
+
+<p>When a tile swaps its image, the choice is constrained: the new crop must come
+from the source image at the same height as the tile is in the piece. The
+randomness plays out horizontally, with images sliding left and right, but
+never up and down: the horizon is always stable. This permits dialog between
+tiles in the same row that juxtapose crops from the same image, but also
+between same-row tiles showing crops from different source images. The horizon
+is always stable, even when there are many horizons.</p>
+
+<p>With the image scrambled, you sense its texture and might spot a small specific
+detail - an eye, a tree - but the image itself remains out of reach. As the
+source image changes, the texture and details of two images intermix, and enter
+into a dialog with each other.</p>
+
+<p>The original installation feature this set of 11 images (actually there were
+13, but two of them were lost and I don’t remember what they were), which I
+believe came from unsplash, but I’ve lost any record of their provenance. If
+one of them is yours, please <a href="mailto:danbernier@gmail.com">contact me</a> and I’ll
+happily give you credit.</p>
+
+<div class="grid">
+  <div class="small"><img src="imgs-orig/flatiron.jpg" /></div>
+  <div class="small"><img src="imgs-orig/ferris-wheel.jpg" /></div>
+  <div class="small"><img src="imgs-orig/blue-orange-mountains.jpg" /></div>
+  <div class="small"><img src="imgs-orig/white-clouds.jpg" /></div>
+  <div class="small"><img src="imgs-orig/farm-horse.jpg" /></div>
+  <div class="small"><img src="imgs-orig/borealis.jpg" /></div>
+  <div class="small"><img src="imgs-orig/tree-silhouette.jpg" /></div>
+  <div class="small"><img src="imgs-orig/beach-yellow-and-blue.jpg" /></div>
+  <div class="small"><img src="imgs-orig/eagle-sky.jpg" /></div>
+  <div class="small"><img src="imgs-orig/blue-flowers.jpg" /></div>
+  <div class="small"><img src="imgs-orig/sheep.jpg" /></div>
+</div>
+
+<p>A future direction for this idea might be to explore different selections of
+source images. For this web installation, I’ve used this photo set:</p>
+
+<div class="grid">
+  <div class="small"><img src="imgs/orange-sky.jpg" /></div>
+  <div class="small"><img src="imgs/city-buildings.jpg" /></div>
+  <div class="small"><img src="imgs/person-by-docks.jpg" /></div>
+  <div class="small"><img src="imgs/shower-face.jpg" /></div>
+  <div class="small"><img src="imgs/sunflower.jpg" /></div>
+  <div class="small"><img src="imgs/lighthouse.jpg" /></div>
+  <div class="small"><img src="imgs/winter-trees.jpg" /></div>
+  <div class="small"><img src="imgs/purple-leaves.jpg" /></div>
+  <div class="small"><img src="imgs/graffiti-yogi.jpg" /></div>
+  <div class="small"><img src="imgs/glass-wall.jpg" /></div>
+  <div class="small"><img src="imgs/floral-curtain.jpg" /></div>
+  <div class="small"><img src="imgs/nepal.jpg" /></div>
+  <div class="small"><img src="imgs/barbershop.jpg" /></div>
+  <div class="small"><img src="imgs/car.jpg" /></div>
+</div>
+
+<ul>
+  <li><a href="https://unsplash.com/photos/0Gi-uFR9RGQ">orange sky by Cristina Gottardi</a></li>
+  <li><a href="https://unsplash.com/photos/7QZsXFcc8gA">city buildings by Brandon Morales</a></li>
+  <li><a href="https://unsplash.com/photos/sDl_QKiaXjM">person by docks by Nick Reynolds</a></li>
+  <li><a href="https://unsplash.com/photos/LPUBs_SDzfs">shower face by Francesca Zama</a></li>
+  <li><a href="https://unsplash.com/photos/isvBs-Bjmow">sunflower by Autumn Stokes</a></li>
+  <li><a href="https://unsplash.com/photos/GIAexh-6atY">lighthouse by Malik Skydsgaard</a></li>
+  <li><a href="https://unsplash.com/photos/FieW-GIYsJs">winter trees by Maria Vojtovicova</a></li>
+  <li><a href="https://unsplash.com/photos/kYs21UwBwgE">purple leaves by Zina Stepanczuk</a></li>
+  <li><a href="https://unsplash.com/photos/-UXvn6eNWfE">graffiti yogi by David Suarez</a></li>
+  <li><a href="https://unsplash.com/photos/mskaPCZC7z4">glass wall by Carter Baran</a></li>
+  <li><a href="https://unsplash.com/photos/SgQKa1eTI-Y">floral curtain by Mourad Saadi</a></li>
+  <li><a href="https://unsplash.com/photos/KKm1ua7MSf0">Nepal by Raimond Klavins</a></li>
+  <li><a href="https://unsplash.com/photos/FEJKPMbjpSw">barbershop by Maksym Tymchyk</a></li>
+  <li><a href="https://unsplash.com/photos/XUW7Fgiqkm8">car by AVW</a></li>
+</ul>
+
+
+</div>
+
+      </div>
+      <div id="right">
+        <div id="ribbon">
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-columns">
+        <div id="logo">
+          <h3>DESIGN <i>is</i> CHOICE<br>
+            <i>by</i> <a href="https://danbernier.com/">DAN BERNIER</a></h3>
+          <p>© <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+        </div>
+        <div id="links">
+          <a href="/about.html">About</a><br>
+          <!--
+          <a href="#">Projects</a>
+          -->
+        </div>
+        <div id="social">
+          <a href="https://github.com/danbernier/designischoice.com"><img src="/images/github.svg"></a>
+          <a href="https://instagram.com/designischoice"><img src="/images/instagram.svg"></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
