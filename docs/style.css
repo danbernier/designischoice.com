@@ -65,13 +65,15 @@ body {
 
 #projects img {
   object-fit: cover;
-  filter: sepia(100%) grayscale(25%) saturate(200%) brightness(70%) hue-rotate(190deg) contrast(200%);
+  /*filter: sepia(100%) grayscale(25%) saturate(200%) brightness(70%) hue-rotate(190deg) contrast(200%);*/
+  filter: sepia(0%) grayscale(25%) saturate(0%) brightness(80%) contrast(140%);
   transition: 1s;
 }
 
 #projects img:hover {
   filter: none;
-  filter: sepia(0%) grayscale(0%) saturate(100%) brightness(100%) hue-rotate(360deg) contrast(100%);
+  /*filter: sepia(0%) grayscale(0%) saturate(100%) brightness(100%) hue-rotate(360deg) contrast(100%);*/
+  filter: sepia(0%) grayscale(0%) saturate(100%) brightness(100%) contrast(100%);
 }
 
 #project img {
