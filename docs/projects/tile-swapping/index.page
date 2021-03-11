@@ -178,10 +178,12 @@ tiles in the same row that juxtapose crops from the same image, but also
 between same-row tiles showing crops from different source images. The horizon
 is always stable, even when there are many horizons.
 
-With the image scrambled, you sense its texture and might spot a small specific
-detail - an eye, a tree - but the image itself remains out of reach. As the
-source image changes, the texture and details of two images intermix, and enter
-into a dialog with each other.
+With the image scrambled, you sense its texture, but you can't make sense of
+it. You might spot a small specific detail - an eye, a tree - but the image
+itself remains out of reach; small details of a textural part of the image,
+cropped out of context, can become a focal point.  As the source image changes,
+the texture and details of two images intermix, and enter into a dialog with
+each other.
 
 The original installation feature this set of 11 images (actually there were
 13, but two of them were lost and I don't remember what they were), which I
