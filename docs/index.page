@@ -19,17 +19,17 @@
     <div class='date'>Projector Night at Baobab Tree Studios</div>
   </div>
   <div class="medium">
-    <a href="projects/wordcram-book-covers">
-      <img src="images/thumbs/wordcram-book-covers.png">
-      <div class="title">WordCram Book Covers</div>
-    </a>
-  </div>
-  <div class="medium">
     <a href="projects/fractal-circles">
       <img src="images/thumbs/fractal-circles.png">
       <div class="title">Fractal Circles</div>
     </a>
     <div class="date">Re:Generate</div>
+  </div>
+  <div class="medium">
+    <a href="projects/wordcram-book-covers">
+      <img src="images/thumbs/wordcram-book-covers.png">
+      <div class="title">WordCram Book Covers</div>
+    </a>
   </div>
   <div class="medium">
     <a href="projects/emoji-banners">
