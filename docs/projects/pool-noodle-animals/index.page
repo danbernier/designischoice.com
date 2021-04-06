@@ -1,5 +1,5 @@
 {% assign title = 'Pool noodle animals' %}
-{% assign occurred_at = 'Oct 2015' %}
+{% assign occurred_at = 'October 2015' %}
 {% assign event = 'City Wide Open Studios' %}
 {% assign event_url = 'https://www.cwos.org' %}
 {% project %}

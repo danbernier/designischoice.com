@@ -1,5 +1,5 @@
 {% assign title = 'Fractal Circles' %}
-{% assign occurred_at = 'Aug 2014' %}
+{% assign occurred_at = 'August 2014' %}
 {% assign event = 'Re:GENERATE' %}
 {% assign event_url = 'http://web.archive.org/web/20150819084441/http://grovenewhaven.com/art-of-code-regenerate/' %}
 {% project %}

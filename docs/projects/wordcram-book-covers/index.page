@@ -1,5 +1,5 @@
 {% assign title = 'WordCram book covers' %}
-{% assign occurred_at = 'Dec 2013' %}
+{% assign occurred_at = 'December 2013' %}
 {% project %}
 
 After talking about John Brunner with a friend, I saw that "Stand on Zanzibar"
