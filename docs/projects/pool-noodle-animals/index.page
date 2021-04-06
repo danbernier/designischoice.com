@@ -4,7 +4,7 @@
 {% assign event_url = 'https://www.cwos.org' %}
 {% project %}
 
-<div class="big"><img src="banner.png"></div>
+<div class="big"><img src="banner.jpg"></div>
 
 <p>In October 2015, my friend <a href="https://dangries.com">Dan Gries</a> and I got to decorate the windows of the New Haven Armory on Goffe Street, for <a href="htttps://www.cwos.org">City Wide Open Studios</a>. They were covered in metal grids, and, like we had with the Marilyn Monroe piece we did for Re:Generate 2014, we stuffed the grid with chunks of pool noodles.</p>
 
@@ -60,7 +60,7 @@ The final images were composed of 25,352 pieces, and we finished with some lefto
   <div class="medium"><img src="ready-to-install.jpg"></div>
   <div class="medium"><img src="mary-installing.jpg"></div>
   <div class="medium"><img src="printout-progress.jpg"></div>
-  <div class="big"><img src="chickie-progress.png"></div>
+  <div class="big"><img src="chickie-progress.jpg"></div>
   <div class="medium"><img src="map-in-the-grid.jpg"></div>
   <div class="small"><img src="dan-like-a-pro.jpg"></div>
 </div>
