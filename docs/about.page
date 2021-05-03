@@ -1,16 +1,16 @@
 {% assign title = 'About' %}
 {% project %}
 
+
 Design is Choice is where Dan Bernier collects his generative art projects.
 
-Design is a process of choosing. Generative art is a process of processes: a
-human writes an algorithm, runs it, considers its outputs, adjusts it, and runs
-it again, repeating this until enough of the outputs look good enough.
+Design is a process of choosing. Generative art is a process of processes:
+write an algorithm, run it, consider its outputs, adjust it, and run it again;
+repeat until enough of the outputs look good enough.
 
-As it runs, an algorithm makes dozens of choices, or trillions. The algorithm
-makes its choices based on its inputs and its structure, the rules and steps
-that define it. As the generative artist shapes their algorithm, they make
-their choices based on what the algorithm produces, how fast or efficiently it
+As it runs, the algorithm makes dozens or trillions of choices, based on its
+inputs and the rules and steps that define it. As you shape the algorithm, you
+make choices based on what the algorithm produces, how fast or efficiently it
 runs, what data sources are available to feed it.
 
 To choose is to design.
