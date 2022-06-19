@@ -41,21 +41,21 @@
 opens up a possibility
 to do an old thing in a new way.</p>
 
-<p>At TED, we chatted in <a href="https://flowdock.com/">Flowdock</a> (it’s like Slack, but
-less popular).</p>
+<p>When I worked at TED, we chatted in <a href="https://flowdock.com/">Flowdock</a> (it’s a
+now-discontinued chat product like Slack, but it was always less popular).</p>
 
 <p>The team developed a peculiar appreciation for custom emoji, specifically for
-how nice they look. I think this is because Flowdock lets you control
-(independent from the text) the size of emoji, and the team had developed a
-culture of setting that slider to “very, very large”. The ugly parts of a
-custom emoji will be very apparent.</p>
+how nice they look. I think this was because Flowdock would let you control the
+size of the emoji (independent from the text), and for some reason the team had
+developed a culture of setting that slider to “very, very large”. The ugly
+parts of a custom emoji would be very apparent.</p>
 
-<p>When you hover over a message, Flowdock changes its background color from white
-to gray, so an emoji with a white background will have a white box around it.
-Most of the team was able to make the background of an image transparent, but
-sometimes, through a lack of skill or a lack of patience, or maybe because they
-just didn’t think about the hover, someone would upload an emoji with a white
-background, and take some heat for it.</p>
+<p>When you hover over a message, Flowdock would change its background color from
+white to gray, so an emoji with a white background would have a white box
+around it.  Most of the team was able to make the background of an image
+transparent, but sometimes, through a lack of skill or a lack of patience, or
+maybe because they just didn’t think about the hover, someone would upload an
+emoji with a white background, and take some heat for it.</p>
 
 <div class="medium white">
 <img src="whiskey-dont-panic.png" alt="A hover reveals an ugly white background" />
@@ -74,9 +74,8 @@ hovered over the message.</p>
 that was just a 64x64 transparent image. Take that, emoji police! 🖕🚔</p>
 
 <p>That last step opened up a new possibility: you could make a message entirely
-from emoji, but where each emoji stood not as its own image-word, but as a
-pixel in a grid of fixed-width emoji, spaced out with the <code>:transparent:</code>
-emoji:</p>
+from emoji, but where each emoji was not its own image-word, but was a pixel in
+a grid of fixed-width emoji, spaced out with the <code>:transparent:</code> emoji:</p>
 
 <pre><code>:wave::transparent::transparent::transparent::transparent:
 :wave::transparent::transparent::transparent::wave:
@@ -88,7 +87,7 @@ emoji:</p>
 :transparent::transparent::transparent::transparent::transparent:
 </code></pre>
 
-<p>…and it would render like this:</p>
+<p>…would render like this:</p>
 
 <div id="hi-wave">
 <img src="emoji/wave.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><img src="emoji/transparent.png" /><br />
@@ -106,11 +105,11 @@ script</a>
 to do it. The code is a mess, but running it is easy – here’s the command to
 produce that example:</p>
 
-<pre><code>dan@tower-of-babylon emoji-banner % ruby play.rb hi wave
+<pre><code>dan@tower-of-babylon emoji-banner % ruby play.rb "hi" wave
 </code></pre>
 
-<p>The first argument, “hi”, is the message (it can be wrapped in quotes if the
-message contains spaces), and the emoji to render it in is the last argument.</p>
+<p>The first argument, “hi”, is the message, and the emoji to render it in is the
+last argument.</p>
 
 <p>The “font” was contributed by <a href="http://www.taralynnconnelly.com/">Tara Lynn
 Connelly</a>, and I made some tweaks.  Each
@@ -143,7 +142,7 @@ the code for “i” and “j”:</p>
 <h1 id="gallery">Gallery</h1>
 
 <p>Even with a smaller emoji and a full-width message window, the banner’s text is
-constrained, and in the earliest experiments, the banner’s message was
+constrained, and in the earliest experiments with it, the banner’s message was
 reinforced by the emoji.</p>
 
 <div class="grid">
@@ -213,20 +212,20 @@ that was wonderful for morale.)</p>
 
 <div class="medium"><img src="obey-anarchy.png" /></div>
 
-<h1 id="section">🐞🐝🦟🕷🐛🐜</h1>
+<h1 id="bugs-in-the-source-">Bugs in the source 🐞🐝🦟🕷🐛🐜</h1>
 
 <p>There were two difficulties with using the script in Flowdock.</p>
 
-<p>The first was a bug with how Flowdock renders native emoji: they won’t all
-appear at the same size. Here, the message “luv” in ❤️ comes out lumpy and
+<p>The first was a bug with how Flowdock would render native emoji: they wouldn’t
+all appear at the same size. Here, the message “luv” in ❤️ comes out lumpy and
 illegible:</p>
 
 <div class="medium"><img src="bad-luv.png" /></div>
 
-<p>The second was Flowdock’s “inbox” feature, which narrows the area for viewing a
-message, causing it to wrap incorrectly, making the banner message illegible.
-Ironically, this was even worse when viewing the emoji at a large setting.
-<!-- FIXME reword that last sentence.  --></p>
+<p>The second was Flowdock’s “inbox” feature, which, like Slack’s threads, would
+put a subset of messages in a pane to the right, shrinking the main space and
+forcing more messages to wrap, making many of them illegible.  Ironically, this
+was only aggravated when viewing the emoji at a large setting.</p>
 
 <div class="grid">
 <div class="big"><img src="hmm.png" /></div>
