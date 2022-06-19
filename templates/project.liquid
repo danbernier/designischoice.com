@@ -2,6 +2,7 @@
 {% assign occurred_at = occurred_at %}
 {% assign event = event %}
 {% assign event_url = event_url %}
+{% assign project_url = project_url %}
 {% page %}
 <div id="logo">
   <a href="/"><h3>DESIGN <i>is</i> CHOICE</h3></a>
@@ -18,6 +19,10 @@
       {% else %}
         {{ event }}
       {% endif %}
+    {% endif %}
+    {% if project_url %}
+      //
+      <a href="{{ project_url }}" target="_blank">website</a>
     {% endif %}
     </p>
   </div>
