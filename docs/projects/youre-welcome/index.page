@@ -1,0 +1,100 @@
+{% assign title = '"You&rsquo;re welcome"' %}
+{% assign occurred_at = 'June 15, 2015' %}
+
+{% project %}
+
+This may be the tiniest of all my gen-art projects. It's almost ridiculous to
+post, but I like the effects I've observed from it in the wild so much, that
+I'm doing it anyway.
+
+We ask our chatbots to do all kinds of things, from showing us a random photo
+of a pug to deploying our code to production. How often do we thank them for
+their efforts?
+
+But no one's going to thank a bot who's not listening for a "thank you," who
+won't respond to the thanks.
+
+So I wrote a small script so a chatbot can say "You're welcome."
+
+<blockquote>
+"Thanks, bot!"<br><br>
+<span id='yw-display'></span>
+</blockquote>
+
+<script type="text/javascript" id='yw-src'>
+function youreWelcome() {
+  // Anatomy of a "you're welcome":
+  // a phrase, a punctuation mark, a space, an emoji.
+  return phrase() + punc() + " " + emoji();
+}
+
+function phrase() {
+  return pickOne([
+    "You're welcome",
+    "No problem",
+    "No prob",
+    "np",
+    "Sure thing",
+    "Anytime, sweetie",
+    "Anytime",
+    "Anything for you",
+    "De nada, amigo",
+    "Don't worry about it"
+  ]);
+}
+
+function punc() {
+  // Add an empty string, so we don't always have punctuation:
+  return pickOne(["", "!", ".", "!!"]);
+}
+
+function emoji() {
+  return pickOne([
+    // Add a few empty strings to the options, so we don't overuse emoji:
+    "", "", "",
+    "😄", "👍", "👌", "👊", "😃", "❤️", "💗", "✨", "🌟", "⭐️", "😏", "😁",
+    "😸", "🌻", "🐯", "🌮", "🌷", "🐾", "🌺", "🌸"]);
+}
+
+// Pick one of a set of options at random:
+function pickOne(array) {
+  let i = Math.floor(Math.random() * array.length);
+  return array[i];
+}
+</script>
+
+Here's the source, <!-- see the JS at the bottom, in case you forgot. -->
+written for anyone to read and especially to edit, no matter how much
+javascript they know:
+
+<pre id='script-display'></pre>
+
+
+
+<!--
+<pre>
+module.exports = (robot) ->
+  robot.hear ///(thx|thanks|thank\s+you),?\s+#{robot.name}///i, (msg) ->
+    msg.send youre_welcome()
+
+  robot.respond /(thx|thanks|thank you)/i, (msg) ->
+    msg.send youre_welcome()
+</pre>
+
+[hubot](https://hubot.github.com/)
+
+https://github.com/ContinuityControl/Hubot/blob/33bb78d8c84dcdbbe75f2c6f573aff704a8522d7/scripts/thanks.coffee
+
+https://github.com/newhavenio/hubot/blob/f7118d6c5492ed41eda7fc090152017a896cbd11/scripts/thanks.coffee
+-->
+
+<script type="text/javascript">
+function displayYoureWelcome() {
+  document.getElementById('yw-display').innerText = youreWelcome();
+}
+displayYoureWelcome();
+setInterval(displayYoureWelcome, 2000);
+
+document.getElementById('script-display').innerText = document.getElementById('yw-src').innerText;
+</script>
+{% endproject %}
