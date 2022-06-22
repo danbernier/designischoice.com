@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+pre {
+  overflow: scroll;
+}
+
 #columns {
   width: 60vw;
   margin: auto;
