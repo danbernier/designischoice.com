@@ -1,0 +1,165 @@
+{% assign title = 'Compliments/Insults' %}
+{% assign occurred_at = 'November 2014' %}
+{% assign project_url = 'https://github.com/danbernier/complimenter' %}
+
+{% project %}
+
+<blockquote>
+<span id='compliment-display'></span>
+</blockquote>
+
+This project is utterly silly.
+
+It started as an insult generator, from the observation many of us have made
+that uninspired insults can be formulaic. I started cataloging the formulae,
+and wrote them down in ruby. Testing it was unpleasant, because my program kept
+insulting me. Programming usually feels that way, but this was extra.  So I
+changed the templates and started generating compliments instead.
+
+Generative art has to surprise you at least a little, and my favorite surprise
+was when I was generating compliments and piping them through `say`, so my
+actual laptop was spouting effusive nonsense at me through my speakers, and it
+said: "You make me dance! On my grandmother's grave." This was right after my
+actual grandmother's actual funeral.
+
+A much stripped-down version of this became [the "You're welcome" script for
+chatbots](/projects/youre-welcome).
+
+(You can still see the original insults in the source, if you want to look. I
+wouldn't, though.)
+
+<script type="text/javascript">
+function complimentGenerator() {
+  return phrases();
+}
+
+function phrases() {
+  return phrase() + ". " + maybe(0.5, phrases);
+}
+
+function phrase() {
+  return pickOne([
+    youMakeMe,
+    youHaveA,
+    youHave,
+    iLoveYou,
+    whenIAm,
+    youAre,
+  ]);
+}
+
+function youMakeMe() {
+  return "You make me" + maybe(0.5, adverbs) + verb() + maybe(0.25, adverbs) + emphatic();
+}
+
+function youHaveA() {
+  return "You have " + a(adjectives() + singularAttribute()) + emphatic();
+}
+
+function youHave() {
+  return "You have" + adjectives() + pluralAttribute() + emphatic();
+}
+
+function iLoveYou() {
+  return "I love you"; // Simple and pure.
+}
+
+function whenIAm() {
+  return "When I am " +
+    badEmotion() + " you " +
+    pickMeUp() +
+    emphatic();
+}
+
+function badEmotion() {
+  return pickOne(["sad", "down", "upset", "freaking out", "in the lost-and-found", "throwing a tantrum"]);
+}
+
+function pickMeUp() {
+  return pickOne(["cheer me up", "kick my ass into gear", "put the wind back in my sails"]);
+}
+
+function youAre() {
+  return "You are" + adverbs() + adjective();
+}
+
+function emphatic() {
+  return maybe(0.95, function() {
+    return ", " +
+    pickOne([
+      "really",
+      "you really do",
+      "you do",
+      function() { return "I swear" + maybe(0.5, " it") },
+      function() { maybe(0.5, "up") + "on my grandmother's grave" },
+      "by Jove",
+      "you don't even know",
+      "seriously",
+      "I mean it"
+    ]) + maybe(0.3, emphatic)
+  });
+}
+
+function adjectives() {
+  return adjective() + maybe(0.25, adjectives);
+}
+
+function adjective() {
+  return " " + pickOne(["beautiful", "glorious", "wonderful", "wiggly"]);
+}
+
+function pluralAttribute() {
+  return " " + pickOne(["eyes", "ears", "fingers", "thumbs", "toes", "feet", "nostrils", "hair"]);
+}
+
+function singularAttribute() {
+  return " " + pickOne(["voice", "nose", "face", "sense of humor", "poise", "grace", "mind", "heart", "soul", "laugh"]);
+}
+
+function adverbs() {
+  return adverb() + maybe(0.25, adverbs);
+}
+
+function adverb() {
+  return " " + pickOne(["with happiness", "ecstatically", "beautifully", "gloriously"]);
+}
+
+function verb() {
+  return " " + pickOne(["swoon", "dance", "sing", "be a better person"]);
+}
+
+// Prepend the word with "a" or "an," depending.
+function a(word) {
+  return word.match(/^[aeiou]/) ? `an ${word}` : `a ${word}`;
+}
+
+// MAYBE call this function:
+function maybe(p, result) {
+  if (Math.random() > p) {
+    return '';
+  } else {
+    if (typeof result === 'function') {
+      return result();
+    } else {
+      return result;
+    }
+  }
+}
+
+// Pick one of a set of options at random:
+function pickOne(array) {
+  let chosen = array[
+    Math.floor(Math.random() * array.length)
+  ];
+  return typeof chosen === 'function' ? chosen() : chosen;
+}
+</script>
+
+<script type="text/javascript">
+function displayComplimentGenerator() {
+  document.getElementById('compliment-display').innerText = complimentGenerator();
+}
+displayComplimentGenerator();
+setInterval(displayComplimentGenerator, 1500);
+</script>
+{% endproject %}
