@@ -69,9 +69,12 @@ javascript they know:
 
 <pre id='script-display'></pre>
 
+The best way to use it in your chat depends on your chat platform and chatbot
+framework. Here's how I've installed it as a [hubot](https://hubot.github.com/)
+script on Slack, written in coffeescript; a bot named Hobbes (as it was at a
+prior employer) will respond to messages like "thx, Hobbes", or to an "@Hobbes
+thank you!"
 
-
-<!--
 <pre>
 module.exports = (robot) ->
   robot.hear ///(thx|thanks|thank\s+you),?\s+#{robot.name}///i, (msg) ->
@@ -81,8 +84,7 @@ module.exports = (robot) ->
     msg.send youre_welcome()
 </pre>
 
-[hubot](https://hubot.github.com/)
-
+<!--
 https://github.com/ContinuityControl/Hubot/blob/33bb78d8c84dcdbbe75f2c6f573aff704a8522d7/scripts/thanks.coffee
 
 https://github.com/newhavenio/hubot/blob/f7118d6c5492ed41eda7fc090152017a896cbd11/scripts/thanks.coffee
