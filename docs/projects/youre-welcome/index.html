@@ -44,7 +44,8 @@ won’t respond to the thanks.</p>
 <script type="text/javascript" id="yw-src">
 function youreWelcome() {
   // Anatomy of a "you're welcome":
-  // a phrase, a punctuation mark, a space, an emoji.
+  // a phrase, a punctuation mark,
+  // a space, an emoji.
   return phrase() + punc() + " " + emoji();
 }
 
@@ -64,24 +65,44 @@ function phrase() {
 }
 
 function punc() {
-  // Add an empty string, so we don't always have punctuation:
+  // Add an empty string, so we don't
+  // always have punctuation:
   return pickOne(["", "!", ".", "!!"]);
 }
 
 function emoji() {
   return pickOne([
-    // Add a few empty strings to the options, so we don't overuse emoji:
+    // Add a few empty strings to the
+    // options, so we don't overuse emoji:
     "", "", "",
-    "😄", "👍", "👌", "👊", "😃", "❤️", "💗", "✨", "🌟", "⭐️", "😏", "😁",
-    "😸", "🌻", "🐯", "🌮", "🌷", "🐾", "🌺", "🌸"]);
+    "😄", "👍", "👌", "👊", "😃",
+    "❤️", "💗", "✨", "🌟", "⭐️",
+    "😏", "😁", "😸", "🌻", "🐯",
+    "🌮", "🌷", "🐾", "🌺", "🌸"]);
 }
 
 // Pick one of a set of options at random:
 function pickOne(array) {
-  let i = Math.floor(Math.random() * array.length);
+  let i = Math.floor(
+    Math.random() * array.length
+  );
   return array[i];
 }
 </script>
+
+<p>This simple addition regularly added tiny hits of joy to my day.</p>
+
+<p>The first job I installed this at, the bot was named for <a href="https://en.wikipedia.org/wiki/Jane_Jacobs">Jane
+Jacobs</a>, but every time I said
+“Thanks Jane” and she’d respond, it felt more like Ender Wiggin’s in-ear AI
+from <a href="https://en.wikipedia.org/wiki/Speaker_for_the_Dead">Speaker for the
+Dead</a>.</p>
+
+<p>I loved thanking the bot and having it speak back; it seemed to humanize the
+bot.  But even more, I loved seeing other people thank the bot. It didn’t
+always respond properly to others, probably because I should’ve added to the
+kinds of phrases it responded to (see below), but it was sometimes a strange
+mirage of awareness, when it would ignore someone and then respond to me.</p>
 
 <p>Here’s the source, <!-- see the JS at the bottom, in case you forgot. -->
 written for anyone to read and especially to edit, no matter how much
@@ -92,10 +113,10 @@ javascript they know:</p>
 <p>The best way to use it in your chat depends on your chat platform and chatbot
 framework. Here’s how I’ve installed it as a <a href="https://hubot.github.com/">hubot</a>
 script on Slack, written in coffeescript; a bot named Hobbes (as it was at a
-prior employer) will respond to messages like “thx, Hobbes”, or to an @:
-“@Hobbes thank you!”</p>
+prior employer) will respond to messages like “thx, Hobbes”, or to an “@Hobbes
+thank you!”</p>
 
-<pre>
+<pre style="overflow: scroll">
 module.exports = (robot) -&gt;
   robot.hear ///(thx|thanks|thank\s+you),?\s+#{robot.name}///i, (msg) -&gt;
     msg.send youre_welcome()
@@ -115,7 +136,7 @@ function displayYoureWelcome() {
   document.getElementById('yw-display').innerText = youreWelcome();
 }
 displayYoureWelcome();
-setInterval(displayYoureWelcome, 2000);
+setInterval(displayYoureWelcome, 1500);
 
 document.getElementById('script-display').innerText = document.getElementById('yw-src').innerText;
 </script>
