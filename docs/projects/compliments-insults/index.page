@@ -91,7 +91,7 @@ function emphatic() {
       "you really do",
       "you do",
       function() { return "I swear" + maybe(0.5, " it") },
-      function() { maybe(0.5, "up") + "on my grandmother's grave" },
+      function() { return maybe(0.5, "up") + "on my grandmother's grave" },
       "by Jove",
       "you don't even know",
       "seriously",
