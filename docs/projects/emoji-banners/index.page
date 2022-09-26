@@ -33,7 +33,7 @@ maybe because they just didn't think about the hover, someone would upload an
 emoji with a white background, and take some heat for it.
 
 <div class='medium white'>
-<img src="whiskey-dont-panic.png" alt="A hover reveals an ugly white background">
+{{ "projects/emoji-banners/whiskey-dont-panic.png" | thumb | img: "A hover reveals an ugly white background" }}
 </div>
 
 Like a meme or a fever, every few months people would argue about custom emoji
