@@ -75,12 +75,16 @@ def render_all_pages
 end
 
 def render_page(page_path)
-  index_path = page_path.sub(/#{File.extname(page_path)}$/, '.html')
+  html_path = page_path.sub(/#{File.extname(page_path)}$/, '.html')
+
+  #          page_path = docs/path/to/foo.page,
+  # and now, html_path = docs/path/to/foo.html
+
   # TOOD: add something here to the liquid context so we know which page it is,
   # so we can do relative-type pathing.
-  # p [page_path, index_path]
+  # p [page_path, html_path]
 
-  File.open(index_path, 'w') do |f|
+  File.open(html_path, 'w') do |f|
     f.puts(Liquid::Template.parse(File.read(page_path)).render.strip)
   end
 end
