@@ -9,11 +9,42 @@ class PageClass < Liquid::Block
   end
 
   def render(context)
+    all_the_assigns_etc =
+      context.environments.reduce(&:merge).merge(
+        context.scopes.reduce(&:merge))
+
+    render_oembed_for_this_page(all_the_assigns_etc)
+
     rendered = Kramdown::Document.new(super).to_html
     @template.render(
-      context.scopes.reduce(&:merge).merge(
-        'content' => rendered,
-      )).strip
+      all_the_assigns_etc.merge('content' => rendered)
+    ).strip
+  end
+
+  private
+
+  def render_oembed_for_this_page(all_the_assigns_etc)
+    # https://oembed.com/ for the reference:
+    oembed = {
+      type: 'link',
+      version: '1.0', # required for oembed
+      title: [all_the_assigns_etc['title'], 'Design is Choice'].compact.join(' · '),
+      author_name: "Daniel Bernier",
+      author_url: "https://danbernier.com",
+    }
+
+    if File.exist?(File.join("docs", all_the_assigns_etc['url_path'], "hero.png"))
+      oembed[:thumbnail_url] = File.join("https://designischoice.com", all_the_assigns_etc['url_path'], "hero.png")
+      image = MiniMagick::Image.open(File.join("docs", all_the_assigns_etc['url_path'], "hero.png"))
+      oembed[:thumbnail_width] = image.width
+      oembed[:thumbnail_height] = image.height
+    end
+
+    oembed_dir = File.join("docs", "oembed", all_the_assigns_etc['url_path'])
+    `mkdir -p #{oembed_dir}`
+    File.open(File.join(oembed_dir, 'oembed.json'), 'w') do |f|
+      f.puts oembed.to_json
+    end
   end
 end
 Liquid::Template.register_tag('page', PageClass)
@@ -27,9 +58,10 @@ class ProjectClass < Liquid::Block
   def render(context)
     rendered = Kramdown::Document.new(super).to_html
     @template.render(
-      context.scopes.reduce(&:merge).merge(
-        'content' => rendered,
-      )).strip
+      context.environments.reduce(&:merge).merge(
+        context.scopes.reduce(&:merge).merge(
+          'content' => rendered,
+        ))).strip
   end
 end
 Liquid::Template.register_tag('project', ProjectClass)
@@ -80,16 +112,18 @@ def render_page(page_path)
   #          page_path = docs/path/to/foo.page,
   # and now, html_path = docs/path/to/foo.html
 
-  # TOOD: add something here to the liquid context so we know which page it is,
-  # so we can do relative-type pathing.
-  # p [page_path, html_path]
-
   File.open(html_path, 'w') do |f|
-    f.puts(Liquid::Template.parse(File.read(page_path)).render.strip)
+    template = Liquid::Template.parse(File.read(page_path))
+    rendered_result = template.render(
+      # 'html_file' => html_path,
+      # 'liquid_file' => page_path,
+      'url_path' => File.dirname(html_path.gsub('docs/', '')))
+    f.puts(rendered_result.strip)
   end
 end
 
 if $0 == __FILE__
   `rm -rf docs/images/thumb`
+  `rm -rf docs/oembed`
   render_all_pages
 end
