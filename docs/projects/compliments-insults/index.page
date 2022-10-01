@@ -1,6 +1,6 @@
 {% assign title = 'Compliments/Insults' %}
 {% assign occurred_at = 'November 2014' %}
-{% assign project_url = 'https://github.com/danbernier/complimenter' %}
+{% assign external_project_website = 'https://github.com/danbernier/complimenter' %}
 
 {% project %}
 

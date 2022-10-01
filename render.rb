@@ -2,7 +2,7 @@ require 'liquid'
 require 'kramdown'
 require 'mini_magick'
 
-class PageClass < Liquid::Block
+class PageBlock < Liquid::Block
   def initialize(tagname, tag_args_as_string, context)
     @template = Liquid::Template.parse(File.read('templates/page.liquid'))
     super
@@ -47,9 +47,9 @@ class PageClass < Liquid::Block
     end
   end
 end
-Liquid::Template.register_tag('page', PageClass)
+Liquid::Template.register_tag('page', PageBlock)
 
-class ProjectClass < Liquid::Block
+class ProjectBlock < Liquid::Block
   def initialize(tagname, tag_args_as_string, context)
     @template = Liquid::Template.parse(File.read('templates/project.liquid'))
     super
@@ -64,7 +64,7 @@ class ProjectClass < Liquid::Block
         ))).strip
   end
 end
-Liquid::Template.register_tag('project', ProjectClass)
+Liquid::Template.register_tag('project', ProjectBlock)
 
 module CustomFilters
   def with_dot_if_present(input)

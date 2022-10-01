@@ -1,6 +1,6 @@
 {% assign title = "MIDI adapter for Korg nanoKONTROL2" %}
 {% assign occurred_at = '2016 - 2018' %}
-{% assign project_url = 'http://danbernier.github.io/korgnano/' %}
+{% assign external_project_website = 'http://danbernier.github.io/korgnano/' %}
 {% project %}
 
 I often get absorbed by the tool-building phase of an art project, and
