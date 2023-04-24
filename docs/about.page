@@ -2,7 +2,7 @@
 {% project %}
 
 
-Design is Choice is where Dan Bernier collects his generative art projects.
+Design is Choice is where Daniel Bernier collects his generative art projects.
 
 Design is a process of choosing. Generative art is a process of processes:
 write an algorithm, run it, consider its outputs, adjust it, and run it again;
@@ -18,7 +18,7 @@ To choose is to design.
 # Colophon
 
 designischoice.com is hosted by [github](https://github.com).  It uses [ruby
-scripts by Dan Bernier](https://github.com/danbernier/designischoice.com) to
+scripts by Daniel Bernier](https://github.com/danbernier/designischoice.com) to
 combine his words and images with HTML and CSS written by [Tara Lynn
 Connelly](https://taralynnconnelly.com). It is set in [IBM Plex
 Mono](https://www.ibm.com/plex/).
