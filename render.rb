@@ -16,7 +16,7 @@ class PageBlock < Liquid::Block
     render_oembed_for_this_page(all_the_assigns_etc)
 
     rendered = Kramdown::Document.new(super).to_html
-    @template.render(
+    @template.render!(
       all_the_assigns_etc.merge('content' => rendered)
     ).strip
   end
@@ -57,7 +57,7 @@ class ProjectBlock < Liquid::Block
 
   def render(context)
     rendered = Kramdown::Document.new(super).to_html
-    @template.render(
+    @template.render!(
       context.environments.reduce(&:merge).merge(
         context.scopes.reduce(&:merge).merge(
           'content' => rendered,
@@ -114,7 +114,7 @@ def render_page(page_path)
 
   File.open(html_path, 'w') do |f|
     template = Liquid::Template.parse(File.read(page_path))
-    rendered_result = template.render(
+    rendered_result = template.render!(
       # 'html_file' => html_path,
       # 'liquid_file' => page_path,
       'url_path' => File.dirname(html_path.gsub('docs/', '')))
