@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap');
 
+/* For rendering the compliments generator's compliments: */
 @font-face {
   font-family: 'Milkshake';
   src: url('fonts/Milkshake.eot');
