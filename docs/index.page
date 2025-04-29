@@ -6,47 +6,47 @@
 <div id="projects">
   <div class="big">
     <a href="projects/pool-noodle-animals">
-      {{ "projects/pool-noodle-animals/hero.jpg" | thumb | img }}
+      {{ "projects/pool-noodle-animals/hero.jpg" | thumb | img_no_link }}
       <div class="title">Pool noodle animals</div>
     </a>
     <div class="date">City Wide Open Studios 2015</div>
   </div>
   <div class="medium">
     <a href="projects/ted-avatars">
-      <img src="projects/ted-avatars/avatars/dan.svg">
+      {{ "projects/ted-avatars/avatars/dan.svg" | img_no_link }}
       <div class="title">Generative Avatars for TED</div>
     </a>
   </div>
   <div class="medium">
     <a href="projects/pool-noodle-marilyn">
-      {{ "projects/pool-noodle-marilyn/hero.png" | thumb | img }}
+      {{ "projects/pool-noodle-marilyn/hero.png" | thumb | img_no_link }}
       <div class="title">Pool noodle Marilyn</div>
     </a>
     <div class="date">Re:Generate, 2014</div>
   </div>
   <div class="medium">
     <a href="projects/tile-swapping">
-      {{ "projects/tile-swapping/hero.png" | thumb | img }}
+      {{ "projects/tile-swapping/hero.png" | thumb | img_no_link }}
       <div class="title">Tile swapping</div>
     </a>
     <div class='date'>Projector Night at Baobab Tree Studios</div>
   </div>
   <div class="medium">
     <a href="projects/fractal-circles">
-      {{ "projects/fractal-circles/12.png" | thumb | img }}
+      {{ "projects/fractal-circles/12.png" | thumb | img_no_link }}
       <div class="title">Fractal Circles</div>
     </a>
     <div class="date">Re:Generate</div>
   </div>
   <div class="medium">
     <a href="projects/wordcram-book-covers">
-      {{ "projects/wordcram-book-covers/hero.png" | thumb | img }}
+      {{ "projects/wordcram-book-covers/hero.png" | thumb | img_no_link }}
       <div class="title">WordCram Book Covers</div>
     </a>
   </div>
   <div class="medium">
     <a href="projects/emoji-banners">
-      {{ "projects/emoji-banners/hero.png" | thumb | img }}
+      {{ "projects/emoji-banners/hero.png" | thumb | img_no_link }}
       <div class="title">Emoji banners</div>
     </a>
   </div>

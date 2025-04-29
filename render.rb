@@ -90,12 +90,16 @@ module CustomFilters
     end
   end
 
-  def img(img_path, alt = nil)
+  def img_no_link(img_path, alt = nil)
     if alt.nil?
       "<img src='/#{img_path}'>"
     else
       "<img src='/#{img_path}' alt='#{alt}'>"
     end
+  end
+
+  def img(img_path, alt = nil)
+    "<a href='/#{img_path}'>#{img_no_link(img_path, alt)}</a>"
   end
 end
 Liquid::Template.register_filter(CustomFilters)

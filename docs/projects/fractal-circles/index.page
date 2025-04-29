@@ -10,19 +10,19 @@ a show featuring computer-generated art. I made, among other things, a
 generative series for the event, that I named Fractal Circles.
  
 <div class="grid">
-  <div class="medium white"><img src="02.png"></div>
-  <div class="medium white"><img src="03.png"></div>
-  <div class="medium white"><img src="04.png"></div>
-  <div class="medium white"><img src="05.png"></div>
-  <div class="small white"><img src="06.png"></div>
-  <div class="small white"><img src="07.png"></div>
-  <div class="small white"><img src="08.png"></div>
-  <div class="small white"><img src="09.png"></div>
-  <div class="medium white"><img src="10.png"></div>
-  <div class="small white"><img src="11.png"></div>
-  <div class="small white"><img src="12.png"></div>
-  <div class="medium white"><img src="13.png"></div>
-  <div class="medium white"><img src="14.png"></div>
+  <div class="medium white">{{ "projects/fractal-circles/02.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/03.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/04.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/05.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/06.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/07.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/08.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/09.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/10.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/11.png" | thumb | img }}</div>
+  <div class="small white">{{ "projects/fractal-circles/12.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/13.png" | thumb | img }}</div>
+  <div class="medium white">{{ "projects/fractal-circles/14.png" | thumb | img }}</div>
 </div>
 
 It's a simple recursive algorithm over a region of the sketch:
@@ -48,7 +48,7 @@ If you decide to recurse every other time, and always draw a
 circle, and alternate the circles types, you get this image, which
 I made to help explain:
 
-<div class="big"><img src="explanation.png"></div>
+<div class="big">{{ "projects/fractal-circles/explanation.png" | thumb | img_no_link }}</div>
 
 If you let yourself pick the _type_ of circle randomly, you're left with two
 questions: whether to recurse, and whether to draw a circle. Answering those
@@ -59,7 +59,7 @@ Here are 144 tiny fractal circle images. The probability of recursing
 decreases as we move from left to right, and the probability of drawing a
 circle increases as we move from top to bottom.
 
-<div class="big white"><img src="orthogonalities.png"></div>
+<div class="big white">{{ "projects/fractal-circles/orthogonalities.png" | thumb | img }}</div>
 
 Here's a <a href="https://p5js.org">p5.js</a> version of it, where the
 probabilty-to-recurse increases as the hour passes, and the

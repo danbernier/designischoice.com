@@ -33,7 +33,7 @@ maybe because they just didn't think about the hover, someone would upload an
 emoji with a white background, and take some heat for it.
 
 <div class='medium white'>
-{{ "projects/emoji-banners/whiskey-dont-panic.png" | thumb | img: "A hover reveals an ugly white background" }}
+{{ "projects/emoji-banners/whiskey-dont-panic.png" | thumb | img_no_link: "A hover reveals an ugly white background" }}
 </div>
 
 Like a meme or a fever, every few months people would argue about custom emoji
@@ -125,9 +125,9 @@ constrained, and in the earliest experiments with it, the banner's message was
 reinforced by the emoji.
 
 <div class='grid'>
-<div class='medium'><img src='fine-fine.png'></div>
-<div class='medium'><img src='ty.png'></div>
-<div class='medium'><img src='hah-alex.png'></div>
+<div class='medium'>{{ 'projects/emoji-banners/fine-fine.png' | thumb | img }}</div>
+<div class='medium'>{{ 'projects/emoji-banners/ty.png' | thumb | img }}</div>
+<div class='medium'>{{ 'projects/emoji-banners/hah-alex.png' | thumb | img }}</div>
 </div>
 
 But the two layers can diverge, carrying messages that inform and complement
