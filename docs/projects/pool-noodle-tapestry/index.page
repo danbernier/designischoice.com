@@ -1,0 +1,50 @@
+{% assign title = 'Pool noodle tapestry' %}
+{% assign occurred_at = 'October 2019' %}
+{% assign event = 'Windowed Worlds' %}
+
+{% project %}
+
+<div class='grid'>
+
+<div class="big">
+{{ "projects/pool-noodle-tapestry/banner.jpg" | thumb | img }}
+</div>
+
+<div class="small">
+{{ "projects/pool-noodle-tapestry/wip-a.jpg" | thumb | img }}
+</div>
+<div class="small">
+{{ "projects/pool-noodle-tapestry/wip-a2.jpg" | thumb | img }}
+</div>
+<div class="medium">
+{{ "projects/pool-noodle-tapestry/wip-a3.jpg" | thumb | img }}
+</div>
+<div class='grid'>
+<div class="big">
+{{ "projects/pool-noodle-tapestry/wip-b.jpg" | thumb | img }}
+</div>
+
+<div class="medium">
+{{ "projects/pool-noodle-tapestry/wip-c.jpg" | thumb | img }}
+</div>
+<div class="medium">
+{{ "projects/pool-noodle-tapestry/wip-d.jpg" | thumb | img }}
+</div>
+
+<div class="medium">
+{{ "projects/pool-noodle-tapestry/wip-e.jpg" | thumb | img }}
+</div>
+<div class="medium">
+{{ "projects/pool-noodle-tapestry/wip-f.jpg" | thumb | img }}
+</div>
+
+<div class="big">
+{{ "projects/pool-noodle-tapestry/wip-g.jpg" | thumb | img }}
+</div>
+<div class="big">
+{{ "projects/pool-noodle-tapestry/sign-your-work.jpg" | thumb | img }}
+</div>
+</div>
+
+
+{% endproject %}

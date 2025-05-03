@@ -18,6 +18,13 @@
     </a>
   </div>
   <div class="medium">
+    <a href="projects/pool-noodle-tapestry">
+      {{ "projects/pool-noodle-tapestry/hero.jpg" | img_no_link }}
+      <div class="title">Pool noodle tapestry</div>
+    </a>
+    <div class="date">Windowed Worlds, October 2019</div>
+  </div>
+  <div class="medium">
     <a href="projects/pool-noodle-marilyn">
       {{ "projects/pool-noodle-marilyn/hero.png" | thumb | img_no_link }}
       <div class="title">Pool noodle Marilyn</div>
