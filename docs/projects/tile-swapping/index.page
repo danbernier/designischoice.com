@@ -19,20 +19,20 @@ function ring(items) {
 }
 
 let imagePaths = [
-  'imgs/orange-sky.jpg',
-  'imgs/city-buildings.jpg',
-  'imgs/person-by-docks.jpg',
-  'imgs/shower-face.jpg',
-  'imgs/sunflower.jpg',
-  'imgs/lighthouse.jpg',
-  'imgs/winter-trees.jpg',
-  'imgs/purple-leaves.jpg',
-  'imgs/graffiti-yogi.jpg',
-  'imgs/glass-wall.jpg',
-  'imgs/floral-curtain.jpg',
-  'imgs/nepal.jpg',
-  'imgs/barbershop.jpg',
-  'imgs/car.jpg',
+  '/projects/tile-swapping/imgs/orange-sky.jpg',
+  '/projects/tile-swapping/imgs/city-buildings.jpg',
+  '/projects/tile-swapping/imgs/person-by-docks.jpg',
+  '/projects/tile-swapping/imgs/shower-face.jpg',
+  '/projects/tile-swapping/imgs/sunflower.jpg',
+  '/projects/tile-swapping/imgs/lighthouse.jpg',
+  '/projects/tile-swapping/imgs/winter-trees.jpg',
+  '/projects/tile-swapping/imgs/purple-leaves.jpg',
+  '/projects/tile-swapping/imgs/graffiti-yogi.jpg',
+  '/projects/tile-swapping/imgs/glass-wall.jpg',
+  '/projects/tile-swapping/imgs/floral-curtain.jpg',
+  '/projects/tile-swapping/imgs/nepal.jpg',
+  '/projects/tile-swapping/imgs/barbershop.jpg',
+  '/projects/tile-swapping/imgs/car.jpg',
 ];
 let rawImages = [];
 let sizedImages = [];
@@ -86,6 +86,7 @@ let tiles = [];
 let theCanvas;
 
 function preload() {
+  console.log("picset: " + getURLParams().picset);
   imagePaths.forEach(function(path, index) {
     loadImage(path, img => { rawImages[index] = img; });
   });

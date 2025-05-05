@@ -72,7 +72,20 @@ module CustomFilters
     "#{input} · "
   end
 
+  # thumb: resizes, returns a new path
+  # img: wraps given path in <a href=''><img src=''></a>
+  # img_no_path: wraps given path in just <img src=''>
+  #
+  # ...rename `img` to `linked_img`, and `img_no_link` to `img`?
+
   def thumb(image_path, width = 700)
+    url_path = context.environments.reverse.map { |env| env['url_path'] }.compact.reject(&:empty?).first
+    unless url_path == '.'
+      unless image_path.start_with?(url_path)
+        image_path = File.join(url_path, image_path)
+      end
+    end
+
     begin
       img_tag_path = File.join("images/thumb", image_path)
       img_file_path = "docs/#{img_tag_path}"
