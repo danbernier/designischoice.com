@@ -18,7 +18,7 @@ function ring(items) {
   };
 }
 
-let imagePaths = [
+let newImagePaths = [
   '/projects/tile-swapping/imgs/orange-sky.jpg',
   '/projects/tile-swapping/imgs/city-buildings.jpg',
   '/projects/tile-swapping/imgs/person-by-docks.jpg',
@@ -34,6 +34,23 @@ let imagePaths = [
   '/projects/tile-swapping/imgs/barbershop.jpg',
   '/projects/tile-swapping/imgs/car.jpg',
 ];
+
+let origImagePaths = [
+  '/projects/tile-swapping/imgs-orig/flatiron.jpg',
+  '/projects/tile-swapping/imgs-orig/ferris-wheel.jpg',
+  '/projects/tile-swapping/imgs-orig/blue-orange-mountains.jpg',
+  '/projects/tile-swapping/imgs-orig/white-clouds.jpg',
+  '/projects/tile-swapping/imgs-orig/farm-horse.jpg',
+  '/projects/tile-swapping/imgs-orig/borealis.jpg',
+  '/projects/tile-swapping/imgs-orig/tree-silhouette.jpg',
+  '/projects/tile-swapping/imgs-orig/beach-yellow-and-blue.jpg',
+  '/projects/tile-swapping/imgs-orig/eagle-sky.jpg',
+  '/projects/tile-swapping/imgs-orig/blue-flowers.jpg',
+  '/projects/tile-swapping/imgs-orig/sheep.jpg',
+];
+
+let imagePaths = newImagePaths;
+
 let rawImages = [];
 let sizedImages = [];
 let sourceImageRing;
@@ -96,8 +113,15 @@ function setup() {
   let sketchHolder = document.getElementById("sketchHolder");
   sketchHolder.textContent = '';
   let sketchWidth = sketchHolder.offsetWidth;
-  theCanvas = createCanvas(sketchWidth, (sketchWidth / 1220) * 980);
+  theCanvas = createCanvas(sketchWidth, 100 + (sketchWidth / 1220) * 980);
   theCanvas.parent("sketchHolder");
+
+  ringPicker = createRadio('ring', sketchHolder);
+  ringPicker.option('original', 'Original image set');
+  ringPicker.option('new', 'New image set');
+  ringPicker.selected('new');
+  ringPicker.position(0, theCanvas.height - 50);
+
 
   // 1 tile is as wide as 5 gaps; 10 tiles + 11 gaps = 61 units:
   padding = sketchWidth / 61.0;
@@ -193,37 +217,37 @@ one of them is yours, please [contact me](mailto:danbernier@gmail.com) and I'll
 happily give you credit.
 
 <div class='grid'>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/flatiron.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/ferris-wheel.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/blue-orange-mountains.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/white-clouds.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/farm-horse.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/borealis.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/tree-silhouette.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/beach-yellow-and-blue.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/eagle-sky.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/blue-flowers.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs-orig/sheep.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/flatiron.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/ferris-wheel.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/blue-orange-mountains.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/white-clouds.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/farm-horse.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/borealis.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/tree-silhouette.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/beach-yellow-and-blue.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/eagle-sky.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/blue-flowers.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs-orig/sheep.jpg" | thumb | img }}</div>
 </div>
 
 A future direction for this idea might be to explore different selections of
 source images. For this web installation, I've used this photo set:
 
 <div class='grid'>
-  <div class='small'>{{ "projects/tile-swapping/imgs/orange-sky.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/city-buildings.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/person-by-docks.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/shower-face.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/sunflower.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/lighthouse.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/winter-trees.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/purple-leaves.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/graffiti-yogi.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/glass-wall.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/floral-curtain.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/nepal.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/barbershop.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/tile-swapping/imgs/car.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/orange-sky.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/city-buildings.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/person-by-docks.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/shower-face.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/sunflower.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/lighthouse.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/winter-trees.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/purple-leaves.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/graffiti-yogi.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/glass-wall.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/floral-curtain.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/nepal.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/barbershop.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "imgs/car.jpg" | thumb | img }}</div>
 </div>
 
 - [orange sky by Cristina Gottardi](https://unsplash.com/photos/0Gi-uFR9RGQ)

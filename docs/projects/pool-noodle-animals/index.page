@@ -4,7 +4,7 @@
 {% assign event_url = 'https://www.cwos.org' %}
 {% project %}
 
-<div class="big">{{ "projects/pool-noodle-animals/banner.jpg" | thumb | img }}</div>
+<div class="big">{{ "banner.jpg" | thumb | img }}</div>
 
 In October 2015, my friend [Dan Gries](https://dangries.com) and I got to decorate the windows of the New Haven Armory on Goffe Street, for [City Wide Open Studios](htttps://www.cwos.org). They were covered in metal grids, and, like we had with [the Marilyn Monroe piece](/projects/pool-noodle-marilyn) we did for Re:Generate 2014, we stuffed the grid with chunks of pool noodles.
 
@@ -13,13 +13,13 @@ In October 2015, my friend [Dan Gries](https://dangries.com) and I got to decora
 Since the grid was diagonal, and stretched, we had to find a new way to cut the noodles to fit into the grid. After a few bad ideas...
 
 <div class="big">
-  {{ "projects/pool-noodle-animals/bad-stick-method.jpg" | thumb | img }}
+  {{ "bad-stick-method.jpg" | thumb | img }}
 </div>
 
 ...we settled on alternating diagonal placement.
 
 <div class="big">
-  {{ "projects/pool-noodle-animals/close-up.jpg" | thumb | img: "A close-up photo of the pool noodles" }}
+  {{ "close-up.jpg" | thumb | img: "A close-up photo of the pool noodles" }}
 </div>
 
 We had sixteen grids that were about 30" wide, 72" tall. That meant buying a lot of pool noodles.
@@ -32,9 +32,9 @@ quarters, then each quarter into slices. The final images were composed of
 25,352 pieces, and we finished with some leftover stock.
 
 <div class='grid'>
-  <div class="medium">{{ "projects/pool-noodle-animals/cut1.jpg" | thumb | img }}</div>
-  <div class="medium">{{ "projects/pool-noodle-animals/cut2.jpg" | thumb | img }}</div>
-  <div class="big">{{ "projects/pool-noodle-animals/cut3.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "cut1.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "cut2.jpg" | thumb | img }}</div>
+  <div class="big">{{ "cut3.jpg" | thumb | img }}</div>
 </div>
 
 ## Preparing the images
@@ -42,15 +42,15 @@ quarters, then each quarter into slices. The final images were composed of
 At the same time, we were looking for images to use. The theme for CWOS 2015 was "Dwelling," so we eventually settled on animals that you often find around the home. It was clear that the images had to be recognizable - we thought a lot about doing abstracts, but it always seemed too boring for this medium. Once we had a range of images, Dan ran them through a dithering algorithm, and made preview PDFs. We had to keep track of how many orange, blue, and green were used in each image, so we didn't run out of any color. To pick the final set, we printed them all, and laid them out.
 
 <div class="big">
-  {{ "projects/pool-noodle-animals/planning-prints.jpg" | thumb | img }}
+  {{ "planning-prints.jpg" | thumb | img }}
 </div>
 
 With about 1,300 pieces per grid, you need a map.
 
 <div class='grid'>
-<div class='small'>{{ "projects/pool-noodle-animals/printout-photo.jpg" | thumb | img }}</div>
-<div class='small'>{{ "projects/pool-noodle-animals/printout-photos.jpg" | thumb | img }}</div>
-<div class='medium'>{{ "projects/pool-noodle-animals/printout.png" | thumb | img }}</div>
+<div class='small'>{{ "printout-photo.jpg" | thumb | img }}</div>
+<div class='small'>{{ "printout-photos.jpg" | thumb | img }}</div>
+<div class='medium'>{{ "printout.png" | thumb | img }}</div>
 </div>
 
 ## Installation
@@ -58,13 +58,13 @@ With about 1,300 pieces per grid, you need a map.
 We needed three car-loads to drive the ladders, table, and bags of noodle chunks to the Armory.
 
 <div class='grid'>
-  <div class="medium">{{ "projects/pool-noodle-animals/ready-to-start.jpg" | thumb | img }}</div>
-  <div class="medium">{{ "projects/pool-noodle-animals/ready-to-install.jpg" | thumb | img }}</div>
-  <div class="medium">{{ "projects/pool-noodle-animals/mary-installing.jpg" | thumb | img }}</div>
-  <div class="medium">{{ "projects/pool-noodle-animals/printout-progress.jpg" | thumb | img }}</div>
-  <div class="big">{{ "projects/pool-noodle-animals/chickie-progress.jpg" | thumb | img }}</div>
-  <div class="medium">{{ "projects/pool-noodle-animals/map-in-the-grid.jpg" | thumb | img }}</div>
-  <div class="small">{{ "projects/pool-noodle-animals/dan-like-a-pro.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "ready-to-start.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "ready-to-install.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "mary-installing.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "printout-progress.jpg" | thumb | img }}</div>
+  <div class="big">{{ "chickie-progress.jpg" | thumb | img }}</div>
+  <div class="medium">{{ "map-in-the-grid.jpg" | thumb | img }}</div>
+  <div class="small">{{ "dan-like-a-pro.jpg" | thumb | img }}</div>
 </div>
 
 ## The Results
@@ -72,18 +72,18 @@ We needed three car-loads to drive the ladders, table, and bags of noodle chunks
 Here they are, from left to right, which is about the reverse of the order they were completed in:
 
 <div class='grid'>
-  <div class='small'>{{ "projects/pool-noodle-animals/01.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/02.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/03.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/04.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/05.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/06.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/07.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/08.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/09.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/10.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/11.1200.jpg" | thumb | img }}</div>
-  <div class='small'>{{ "projects/pool-noodle-animals/12.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "01.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "02.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "03.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "04.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "05.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "06.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "07.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "08.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "09.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "10.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "11.1200.jpg" | thumb | img }}</div>
+  <div class='small'>{{ "12.1200.jpg" | thumb | img }}</div>
 </div>
 
 ## After the Show
@@ -91,6 +91,6 @@ Here they are, from left to right, which is about the reverse of the order they 
 [Dan's flickr album](https://www.flickr.com/photos/dangries/albums/72157659810977045) and [project page](https://dangries.com/galleries/pool-noodles-armory.html) both have a bunch of great photos of the preparation, installation, and results.
 
 <div class='grid'>
-  <div class='big'>{{ "projects/pool-noodle-animals/panorama.jpg" | thumb | img }}</div>
+  <div class='big'>{{ "panorama.jpg" | thumb | img }}</div>
 </div>
 {% endproject %}

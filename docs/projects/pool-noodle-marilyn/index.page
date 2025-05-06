@@ -3,7 +3,7 @@
 {% assign event = 'Re:Generate' %}
 {% project %}
 
-<div class="big">{{ "projects/pool-noodle-marilyn/banner.jpg" | thumb | img }}</div>
+<div class="big">{{ "banner.jpg" | thumb | img }}</div>
 
 The Marilyn is the first pool noodle project [Dan Gries](https://dangries.com) and I did together.
 
@@ -15,15 +15,15 @@ low-res pixel grid, we should do something with that."
 -->
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/before.jpg" | thumb | img }}
+  {{ "before.jpg" | thumb | img }}
 </div>
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/by-hand.jpg" | thumb | img }}
+  {{ "by-hand.jpg" | thumb | img }}
 </div>
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/dang-on-ladder.jpg" | thumb | img }}
+  {{ "dang-on-ladder.jpg" | thumb | img }}
 </div>
 
 <!--
@@ -35,7 +35,7 @@ already come in colors.
 We tried some experiments:
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/fit-experiment.jpg" | thumb | img }}
+  {{ "fit-experiment.jpg" | thumb | img }}
 </div>
 
 So, what should the image be? We thought a human face might be easiest to
@@ -43,7 +43,7 @@ recognize, and maybe a famous face at that, so we went with one of [Warhol's
 portfolio Monroes](https://en.wikipedia.org/wiki/Marilyn_Monroe_portfolio):
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/marilyn.jpg" | thumb | img }}
+  {{ "marilyn.jpg" | thumb | img }}
 </div>
 
 We were surprised during the show to see people parse the image as an abstract:
@@ -51,7 +51,7 @@ some only recognized it as a picture when they saw it through their phone as the
 and saw it smaller:
 
 <div class="big">
-  {{ "projects/pool-noodle-marilyn/scales.png" | thumb | img }}
+  {{ "scales.png" | thumb | img }}
 </div>
 
 (Some of them thought it was a photo of Queen Elizabeth, too.)

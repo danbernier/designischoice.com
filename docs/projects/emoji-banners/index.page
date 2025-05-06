@@ -141,9 +141,9 @@ constrained, and in the earliest experiments with it, the banner's message was
 reinforced by the emoji.
 
 <div class='grid'>
-<div class='medium'>{{ 'projects/emoji-banners/fine-fine.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/emoji-banners/ty.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/emoji-banners/hah-alex.png' | thumb | img }}</div>
+<div class='medium'>{{ 'fine-fine.png' | thumb | img }}</div>
+<div class='medium'>{{ 'ty.png' | thumb | img }}</div>
+<div class='medium'>{{ 'hah-alex.png' | thumb | img }}</div>
 </div>
 
 But the two layers can diverge, carrying messages that inform and complement

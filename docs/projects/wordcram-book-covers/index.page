@@ -7,7 +7,7 @@ was [reprinted in August
 2011](https://www.goodreads.com/book/show/9663875-stand-on-zanzibar), with a
 very [WordCram](https://github.com/danbernier/wordcram)-y cover:
 
-<div class='big'>{{ 'projects/wordcram-book-covers/imgs/zanzibar.png' | thumb | img_no_link: 'Stand on Zanzibar' }}</div>
+<div class='big'>{{ 'imgs/zanzibar.png' | thumb | img_no_link: 'Stand on Zanzibar' }}</div>
 
 Book covers was always one of the things people talked about using WordCram
 for, so I thought I'd try making a fake Borges cover. I think they came out
@@ -19,12 +19,12 @@ The typeface I used was Bebas Neue, which, it seems, you can never go wrong
 with.
 
 <div class='grid'>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/orange.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/orange-dark.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/orange-gradient.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/green.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/green-dark.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/green-gradient.png' | thumb | img }}</div>
-<div class='medium'>{{ 'projects/wordcram-book-covers/imgs/yellow.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/orange.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/orange-dark.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/orange-gradient.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/green.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/green-dark.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/green-gradient.png' | thumb | img }}</div>
+<div class='medium'>{{ 'imgs/yellow.png' | thumb | img }}</div>
 </div>
 {% endproject %}
