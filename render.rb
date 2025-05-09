@@ -21,6 +21,24 @@ class PageBlock < Liquid::Block
     ).strip
   end
 
+  class ImgFile
+    def initialize(filename)
+      @filename = filename
+    end
+
+    def file_exists_in_docs?
+      File.exist?(docs_path)
+    end
+
+    def docs_path
+      File.join("docs", @filename)
+    end
+
+    def url
+      File.join("https://designischoice.com", @filename)
+    end
+  end
+
   private
 
   def render_oembed_for_this_page(all_the_assigns_etc)
@@ -35,9 +53,14 @@ class PageBlock < Liquid::Block
       author_url: "https://danbernier.com",
     }
 
-    if File.exist?(File.join("docs", all_the_assigns_etc['url_path'], "hero.png"))
-      oembed[:thumbnail_url] = File.join("https://designischoice.com", all_the_assigns_etc['url_path'], "hero.png")
-      image = MiniMagick::Image.open(File.join("docs", all_the_assigns_etc['url_path'], "hero.png"))
+    hero_file = [
+      ImgFile.new(File.join(all_the_assigns_etc['url_path'], "hero.png")),
+      ImgFile.new(File.join(all_the_assigns_etc['url_path'], "hero.jpg")),
+    ].find(&:file_exists_in_docs?)
+
+    if hero_file
+      oembed[:thumbnail_url] = hero_file.url
+      image = MiniMagick::Image.open(hero_file.docs_path)
       oembed[:thumbnail_width] = image.width
       oembed[:thumbnail_height] = image.height
     end
