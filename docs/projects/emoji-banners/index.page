@@ -12,22 +12,6 @@
 {% project %}
 
 
-<!--
-raw img, rel path:
-<img src='emoji/wave.png'>
-
-raw img, absolute path:
-<img src='/projects/emoji-banners/emoji/wave.png'>
-
-liquid, thumb-img:
-{{ 'emoji/wave.png' | thumb | img }}
-
-the way i want to do it:
-{{ 'emoji/wave.png' | img }}
-
-<hr>
--->
-
 Sometimes a prank 
 opens up a possibility
 to do an old thing in a new way.

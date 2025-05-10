@@ -113,14 +113,14 @@ function setup() {
   let sketchHolder = document.getElementById("sketchHolder");
   sketchHolder.textContent = '';
   let sketchWidth = sketchHolder.offsetWidth;
-  theCanvas = createCanvas(sketchWidth, 100 + (sketchWidth / 1220) * 980);
+  theCanvas = createCanvas(sketchWidth, (sketchWidth / 1220) * 980);
   theCanvas.parent("sketchHolder");
 
-  ringPicker = createRadio('ring', sketchHolder);
-  ringPicker.option('original', 'Original image set');
-  ringPicker.option('new', 'New image set');
-  ringPicker.selected('new');
-  ringPicker.position(0, theCanvas.height - 50);
+  // ringPicker = createRadio('ring', sketchHolder);
+  // ringPicker.option('original', 'Original image set');
+  // ringPicker.option('new', 'New image set');
+  // ringPicker.selected('new');
+  // ringPicker.position(0, theCanvas.height - 50);
 
 
   // 1 tile is as wide as 5 gaps; 10 tiles + 11 gaps = 61 units:
