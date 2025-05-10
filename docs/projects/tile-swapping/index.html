@@ -52,7 +52,7 @@ function ring(items) {
   };
 }
 
-let imagePaths = [
+let newImagePaths = [
   '/projects/tile-swapping/imgs/orange-sky.jpg',
   '/projects/tile-swapping/imgs/city-buildings.jpg',
   '/projects/tile-swapping/imgs/person-by-docks.jpg',
@@ -68,6 +68,23 @@ let imagePaths = [
   '/projects/tile-swapping/imgs/barbershop.jpg',
   '/projects/tile-swapping/imgs/car.jpg',
 ];
+
+let origImagePaths = [
+  '/projects/tile-swapping/imgs-orig/flatiron.jpg',
+  '/projects/tile-swapping/imgs-orig/ferris-wheel.jpg',
+  '/projects/tile-swapping/imgs-orig/blue-orange-mountains.jpg',
+  '/projects/tile-swapping/imgs-orig/white-clouds.jpg',
+  '/projects/tile-swapping/imgs-orig/farm-horse.jpg',
+  '/projects/tile-swapping/imgs-orig/borealis.jpg',
+  '/projects/tile-swapping/imgs-orig/tree-silhouette.jpg',
+  '/projects/tile-swapping/imgs-orig/beach-yellow-and-blue.jpg',
+  '/projects/tile-swapping/imgs-orig/eagle-sky.jpg',
+  '/projects/tile-swapping/imgs-orig/blue-flowers.jpg',
+  '/projects/tile-swapping/imgs-orig/sheep.jpg',
+];
+
+let imagePaths = newImagePaths;
+
 let rawImages = [];
 let sizedImages = [];
 let sourceImageRing;
@@ -120,6 +137,7 @@ let tiles = [];
 let theCanvas;
 
 function preload() {
+  console.log("picset: " + getURLParams().picset);
   imagePaths.forEach(function(path, index) {
     loadImage(path, img => { rawImages[index] = img; });
   });
@@ -131,6 +149,13 @@ function setup() {
   let sketchWidth = sketchHolder.offsetWidth;
   theCanvas = createCanvas(sketchWidth, (sketchWidth / 1220) * 980);
   theCanvas.parent("sketchHolder");
+
+  // ringPicker = createRadio('ring', sketchHolder);
+  // ringPicker.option('original', 'Original image set');
+  // ringPicker.option('new', 'New image set');
+  // ringPicker.selected('new');
+  // ringPicker.position(0, theCanvas.height - 50);
+
 
   // 1 tile is as wide as 5 gaps; 10 tiles + 11 gaps = 61 units:
   padding = sketchWidth / 61.0;
