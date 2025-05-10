@@ -8,19 +8,6 @@ class PageBlock < Liquid::Block
     super
   end
 
-  def render(context)
-    all_the_assigns_etc =
-      context.environments.reduce(&:merge).merge(
-        context.scopes.reduce(&:merge))
-
-    render_oembed_for_this_page(all_the_assigns_etc)
-
-    rendered = Kramdown::Document.new(super).to_html
-    @template.render!(
-      all_the_assigns_etc.merge('content' => rendered)
-    ).strip
-  end
-
   class ImgFile
     def initialize(url_path, filename)
       @filename = File.join(url_path, filename)
@@ -38,6 +25,19 @@ class PageBlock < Liquid::Block
     def url
       File.join("https://designischoice.com", @filename)
     end
+  end
+
+  def render(context)
+    all_the_assigns_etc =
+      context.environments.reduce(&:merge).merge(
+        context.scopes.reduce(&:merge))
+
+    render_oembed_for_this_page(all_the_assigns_etc)
+
+    rendered = Kramdown::Document.new(super).to_html
+    @template.render!(
+      all_the_assigns_etc.merge('content' => rendered)
+    ).strip
   end
 
   private
