@@ -1,6 +1,7 @@
 {% assign title = 'Pool noodle Marilyn' %}
 {% assign occurred_at = 'August 2014' %}
 {% assign event = 'Re:Generate' %}
+{% assign hero = 'hero.png' %}
 {% project %}
 
 <div class="big">{{ "banner.jpg" | thumb | img }}</div>

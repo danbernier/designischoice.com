@@ -22,8 +22,9 @@ class PageBlock < Liquid::Block
   end
 
   class ImgFile
-    def initialize(filename)
-      @filename = filename
+    def initialize(url_path, filename)
+      @filename = File.join(url_path, filename)
+      raise "Missing image file: #{@filename}" unless file_exists_in_docs?
     end
 
     def file_exists_in_docs?
@@ -53,12 +54,8 @@ class PageBlock < Liquid::Block
       author_url: "https://danbernier.com",
     }
 
-    hero_file = [
-      ImgFile.new(File.join(all_the_assigns_etc['url_path'], "hero.png")),
-      ImgFile.new(File.join(all_the_assigns_etc['url_path'], "hero.jpg")),
-    ].find(&:file_exists_in_docs?)
-
-    if hero_file
+    if (hero = all_the_assigns_etc['hero'])
+      hero_file = ImgFile.new(all_the_assigns_etc['url_path'], hero)
       oembed[:thumbnail_url] = hero_file.url
       image = MiniMagick::Image.open(hero_file.docs_path)
       oembed[:thumbnail_width] = image.width

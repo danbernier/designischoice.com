@@ -1,6 +1,7 @@
 {% assign title = 'Pool noodle tapestry' %}
 {% assign occurred_at = 'October 2019' %}
 {% assign event = 'Windowed Worlds' %}
+{% assign hero = 'hero.jpg' %}
 
 {% project %}
 

@@ -9,6 +9,7 @@
 {% assign occurred_at = 'March 2019' %}
 {% assign event = 'github.com/danbernier/emoji-banner' %}
 {% assign event_url = 'https://github.com/danbernier/emoji-banner' %}
+{% assign hero = 'hero.png' %}
 {% project %}
 
 

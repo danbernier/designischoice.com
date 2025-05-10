@@ -2,6 +2,7 @@
 {% assign occurred_at = 'October 2015' %}
 {% assign event = 'City Wide Open Studios' %}
 {% assign event_url = 'https://www.cwos.org' %}
+{% assign hero = 'hero.jpg' %}
 {% project %}
 
 <div class="big">{{ "banner.jpg" | thumb | img }}</div>

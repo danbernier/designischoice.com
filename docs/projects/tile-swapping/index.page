@@ -1,6 +1,7 @@
 {% assign title = 'Tile Swapping' %}
 {% assign occurred_at = 'May 28, 2015' %}
 {% assign event = 'Projector Night at Baobab Tree Studios, New Haven' %}
+{% assign hero = 'hero.png' %}
 {% project %}
 
 <div id='sketchHolder' style='width:100%'></div>
