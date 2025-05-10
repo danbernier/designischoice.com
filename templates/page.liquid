@@ -13,7 +13,13 @@
     <meta property="og:url"         content="{{ url_with_host }}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ title | with_dot_if_present }}Design is Choice" />
-
+    {% if hero_file.file_is_present? %}
+      <meta property="og:image"            content="{{ hero_file.url }}">
+      <meta property="og:image:secure_url" content="{{ hero_file.url }}">
+      <meta property="og:image:width"      content="{{ hero_file.width }}">
+      <meta property="og:image:height"     content="{{ hero_file.height }}">
+      <meta property="og:image:type"       content="{{ hero_file.img_type }}">
+    {% endif %}
   </head>
   <body>
     <div id="columns">

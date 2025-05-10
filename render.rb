@@ -8,14 +8,18 @@ class PageBlock < Liquid::Block
     super
   end
 
-  class ImgFile
+  class ImgFile < Liquid::Drop
     def initialize(url_path, filename)
       @filename = File.join(url_path, filename)
+      @docs_path = File.join("docs", @filename)
 
-      docs_path = File.join("docs", @filename)
-      raise "Missing image file: #{@filename}" unless File.exist?(docs_path)
+      raise "Missing image file: #{@filename}" unless file_is_present?
 
-      @image = MiniMagick::Image.open(docs_path)
+      @image = MiniMagick::Image.open(@docs_path)
+    end
+
+    def file_is_present?
+      File.exist?(@docs_path)
     end
 
     def url
@@ -28,6 +32,19 @@ class PageBlock < Liquid::Block
 
     def height
       @image.height
+    end
+
+    def img_type
+      case File.extname(@filename)
+      when '.jpg', '.jpeg'
+        'image/jpeg'
+      when '.png'
+        'image/png'
+      when '.gif'
+        'image/gif'
+      else
+        raise "Unknown hero image file type: #{@filename}"
+      end
     end
   end
 
@@ -44,7 +61,10 @@ class PageBlock < Liquid::Block
 
     rendered = Kramdown::Document.new(super).to_html
     @template.render!(
-      all_the_assigns_etc.merge('content' => rendered)
+      all_the_assigns_etc.merge(
+        'content' => rendered,
+        'hero_file' => hero_file
+      )
     ).strip
   end
 
