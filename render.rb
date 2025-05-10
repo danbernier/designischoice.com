@@ -36,7 +36,11 @@ class PageBlock < Liquid::Block
       context.environments.reduce(&:merge).merge(
         context.scopes.reduce(&:merge))
 
-    render_oembed_for_this_page(all_the_assigns_etc)
+    hero_file = if (hero = all_the_assigns_etc['hero'])
+                  ImgFile.new(all_the_assigns_etc['url_path'], hero)
+                end
+
+    render_oembed_for_this_page(all_the_assigns_etc, hero_file)
 
     rendered = Kramdown::Document.new(super).to_html
     @template.render!(
@@ -46,7 +50,7 @@ class PageBlock < Liquid::Block
 
   private
 
-  def render_oembed_for_this_page(all_the_assigns_etc)
+  def render_oembed_for_this_page(all_the_assigns_etc, hero_file)
     # https://oembed.com/ for the reference:
     oembed = {
       type: 'link',
@@ -58,8 +62,7 @@ class PageBlock < Liquid::Block
       author_url: "https://danbernier.com",
     }
 
-    if (hero = all_the_assigns_etc['hero'])
-      hero_file = ImgFile.new(all_the_assigns_etc['url_path'], hero)
+    if hero_file
       oembed[:thumbnail_url] = hero_file.url
       oembed[:thumbnail_width] = hero_file.width
       oembed[:thumbnail_height] = hero_file.height
