@@ -11,19 +11,23 @@ class PageBlock < Liquid::Block
   class ImgFile
     def initialize(url_path, filename)
       @filename = File.join(url_path, filename)
-      raise "Missing image file: #{@filename}" unless file_exists_in_docs?
-    end
 
-    def file_exists_in_docs?
-      File.exist?(docs_path)
-    end
+      docs_path = File.join("docs", @filename)
+      raise "Missing image file: #{@filename}" unless File.exist?(docs_path)
 
-    def docs_path
-      File.join("docs", @filename)
+      @image = MiniMagick::Image.open(docs_path)
     end
 
     def url
       File.join("https://designischoice.com", @filename)
+    end
+
+    def width
+      @image.width
+    end
+
+    def height
+      @image.height
     end
   end
 
@@ -57,9 +61,8 @@ class PageBlock < Liquid::Block
     if (hero = all_the_assigns_etc['hero'])
       hero_file = ImgFile.new(all_the_assigns_etc['url_path'], hero)
       oembed[:thumbnail_url] = hero_file.url
-      image = MiniMagick::Image.open(hero_file.docs_path)
-      oembed[:thumbnail_width] = image.width
-      oembed[:thumbnail_height] = image.height
+      oembed[:thumbnail_width] = hero_file.width
+      oembed[:thumbnail_height] = hero_file.height
     end
 
     oembed_dir = File.join("docs", "oembed", all_the_assigns_etc['url_path'])
