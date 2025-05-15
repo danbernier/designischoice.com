@@ -1,11 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.5.0)
+    builder (3.3.0)
     css_press (0.3.2)
       csspool-st (= 3.1.2)
       json
     csspool-st (3.1.2)
     execjs (2.10.0)
+    fakefs (3.0.0)
     html_press (0.8.2)
       htmlentities
       multi_css (>= 0.1.0)
@@ -16,6 +19,12 @@ GEM
       rexml
     liquid (5.4.0)
     mini_magick (4.12.0)
+    minitest (5.25.5)
+    minitest-reporters (1.7.1)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_css (0.1.0)
       css_press
     multi_js (0.1.0)
@@ -29,6 +38,7 @@ GEM
     rack-protection (3.0.6)
       rack
     rexml (3.2.5)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sinatra (3.0.6)
       mustermann (~> 3.0)
@@ -44,10 +54,13 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  fakefs
   html_press
   kramdown
   liquid
   mini_magick
+  minitest
+  minitest-reporters
   puma
   sinatra
 
