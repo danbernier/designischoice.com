@@ -23,6 +23,15 @@
       <meta property="og:image:height" content="{{ hero_file.height }}">
       <meta property="og:image:type" content="{{ hero_file.img_type }}">
     {% endif %}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <!--meta name="twitter:site" content="@designischoice"-->
+    <!--meta name="twitter:creator" content="@designischoice"-->
+    <meta name="twitter:title" content="{{ title | with_dot_if_present }}Design is Choice">
+    {% if blurb %}
+      <meta name="twitter:description" content="{{ blurb }}">
+    {% endif %}
+    <meta name="twitter:image" content="{{ hero_file.url }}">
   </head>
   <body>
     <div id="columns">
