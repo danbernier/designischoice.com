@@ -177,19 +177,20 @@ def render_page(page_path)
   #          page_path = docs/path/to/foo.page,
   # and now, html_path = docs/path/to/foo.html
 
+  template = Liquid::Template.parse(File.read(page_path))
+
+  root = 'https://designischoice.com'
+
+  url_path = File.dirname(html_path.gsub('docs/', ''))
+  url_with_host = url_path == '.' ? root : "#{root}/#{url_path}"
+  rendered_result = template.render!(
+    # 'html_file' => html_path,
+    # 'liquid_file' => page_path,
+    'url_path' => url_path,
+    'url_with_host' => url_with_host,
+  )
+
   File.open(html_path, 'w') do |f|
-    template = Liquid::Template.parse(File.read(page_path))
-
-    root = 'https://designischoice.com'
-
-    url_path = File.dirname(html_path.gsub('docs/', ''))
-    url_with_host = url_path == '.' ? root : "#{root}/#{url_path}"
-    rendered_result = template.render!(
-      # 'html_file' => html_path,
-      # 'liquid_file' => page_path,
-      'url_path' => url_path,
-      'url_with_host' => url_with_host,
-    )
     f.puts(rendered_result.strip)
   end
 end
