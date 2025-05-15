@@ -77,11 +77,12 @@ class PageBlock < Liquid::Block
       type: 'link',
       version: '1.0', # required for oembed
       title: [all_the_assigns_etc['title'], 'Design is Choice'].compact.join(' · '),
+      description: all_the_assigns_etc['blurb'],
       provider_name: 'Design is Choice',
       provider_url: 'https://designischoice.com',
       author_name: "Daniel Bernier",
       author_url: "https://danbernier.com",
-    }
+    }.reject { |k, v| v.nil? || v.empty? }
 
     if hero_file
       oembed[:thumbnail_url] = hero_file.url

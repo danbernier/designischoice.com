@@ -13,6 +13,9 @@
     <meta property="og:url" content="{{ url_with_host }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ title | with_dot_if_present }}Design is Choice" />
+    {% if blurb %}
+      <meta property="og:description" content="{{ blurb }}" />
+    {% endif %}
     {% if hero_file.file_is_present? %}
       <meta property="og:image" content="{{ hero_file.url }}">
       <meta property="og:image:secure_url" content="{{ hero_file.url }}">
