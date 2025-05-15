@@ -1,6 +1,7 @@
 require 'liquid'
 require 'kramdown'
-require 'mini_magick'
+require 'mini_magick' # to resize thumbs
+require 'html_press' # to minify html
 
 class PageBlock < Liquid::Block
   def initialize(tagname, tag_args_as_string, context)
@@ -191,7 +192,7 @@ def render_page(page_path)
   )
 
   File.open(html_path, 'w') do |f|
-    f.puts(rendered_result.strip)
+    f.puts(HtmlPress.press(rendered_result))
   end
 end
 

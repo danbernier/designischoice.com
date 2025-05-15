@@ -1,10 +1,25 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    css_press (0.3.2)
+      csspool-st (= 3.1.2)
+      json
+    csspool-st (3.1.2)
+    execjs (2.10.0)
+    html_press (0.8.2)
+      htmlentities
+      multi_css (>= 0.1.0)
+      multi_js (>= 0.1.0)
+    htmlentities (4.3.4)
+    json (2.12.0)
     kramdown (2.4.0)
       rexml
     liquid (5.4.0)
     mini_magick (4.12.0)
+    multi_css (0.1.0)
+      css_press
+    multi_js (0.1.0)
+      uglifier (~> 2)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.9)
@@ -21,11 +36,15 @@ GEM
       rack-protection (= 3.0.6)
       tilt (~> 2.0)
     tilt (2.1.0)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  html_press
   kramdown
   liquid
   mini_magick
