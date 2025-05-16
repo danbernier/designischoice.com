@@ -128,29 +128,14 @@ module CustomFilters
   #
   # ...rename `img` to `linked_img`, and `img_no_link` to `img`?
 
-  def thumb(image_path, width = 700)
-    url_path = context.environments.reverse.map { |env| env['url_path'] }.compact.reject(&:empty?).first
-    unless url_path == '.'
-      unless image_path.start_with?(url_path)
-        image_path = File.join(url_path, image_path)
-      end
-    end
+  def thumb(folder_local_image_path, width = 700)
+    image_path = expand_path(folder_local_image_path,
+                             extract('url_path', context))
 
-    begin
-      img_tag_path = File.join("images/thumb", image_path)
-      img_file_path = "docs/#{img_tag_path}"
+    thumb_path = File.join("images/thumb", image_path)
 
-      unless File.exist? img_file_path
-        `mkdir -p #{File.dirname(img_file_path)}`
-        image = MiniMagick::Image.open(File.join("docs", image_path))
-        image.resize("#{width}x#{width}")
-        image.write(img_file_path)
-      end
-
-      img_tag_path
-    rescue Exception => x
-      pp x
-    end
+    resize_image(image_path, width, save_to: File.join("docs", thumb_path))
+    thumb_path
   end
 
   def img_no_link(img_path, alt = nil)
@@ -163,6 +148,34 @@ module CustomFilters
 
   def img(img_path, alt = nil)
     "<a href='/#{img_path}'>#{img_no_link(img_path, alt)}</a>"
+  end
+
+  private
+
+  def extract(attr, context)
+    context.environments.reverse.map { |env| env[attr] }.compact.reject(&:empty?).first
+  end
+
+  # Expands ['foo.png', '/projects/bar'] into '/projects/bar/foo.png'
+  def expand_path(file_path, url_path)
+    if url_path == '.'
+      file_path
+    elsif file_path.start_with?(url_path)
+      file_path
+    else
+      File.join(url_path, file_path)
+    end
+  end
+
+  def resize_image(image_path, width, save_to:)
+    docs_image_path = save_to
+    return if File.exist? docs_image_path
+
+    `mkdir -p #{File.dirname(docs_image_path)}`
+
+    image = MiniMagick::Image.open(File.join("docs", image_path))
+    image.resize("#{width}x#{width}")
+    image.write(docs_image_path)
   end
 end
 Liquid::Template.register_filter(CustomFilters)
