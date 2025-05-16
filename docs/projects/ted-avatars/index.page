@@ -7,62 +7,62 @@
 This project reminds me of the beauty of organic shapes.
 
 <div class='grid'>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1555008000.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1340674980.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1499579880.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1174503840.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1506637380.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1529752320.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1239712560.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1309917060.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1752348360.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1651345200.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1606935300.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1689447480.svg' | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1555008000.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1340674980.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1499579880.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1174503840.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1506637380.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1529752320.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1239712560.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1309917060.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1752348360.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1651345200.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1606935300.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1689447480.svg" | img }}</div>
 </div>
 
 It often speaks to me about the importance of small differences.
 
-<div class='grid'>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1587712320.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1602827280.svg' | img }}</div>
+<div class="grid">
+<div class="medium">{{ "projects/ted-avatars/avatars/1587712320.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1602827280.svg" | img }}</div>
 
-<div class='small'>{{ 'projects/ted-avatars/avatars/1288536960.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1423997760.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1521619740.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1589372460.svg' | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1288536960.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1423997760.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1521619740.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1589372460.svg" | img }}</div>
 
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1327706460.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1354587660.svg' | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1327706460.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1354587660.svg" | img }}</div>
 
-<div class='small'>{{ 'projects/ted-avatars/avatars/1632262560.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1724984880.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1233703680.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1439044080.svg' | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1632262560.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1724984880.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1233703680.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1439044080.svg" | img }}</div>
 
-<div class='small'>{{ 'projects/ted-avatars/avatars/1559837040.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1192466400.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1608181500.svg' | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1559837040.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1192466400.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1608181500.svg" | img }}</div>
 
 </div>
 
 It makes me laugh to see how fun a random assemblage can often be.
 
-<div class='grid'>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1257842100.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1663710960.svg' | img }}</div>
+<div class="grid">
+<div class="medium">{{ "projects/ted-avatars/avatars/1257842100.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1663710960.svg" | img }}</div>
 
-<div class='small'>{{ 'projects/ted-avatars/avatars/1281377100.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1734121500.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1233689100.svg' | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1281377100.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1734121500.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1233689100.svg" | img }}</div>
 
-<div class='small'>{{ 'projects/ted-avatars/avatars/1438498200.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1748963700.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1313553540.svg' | img }}</div>
-<div class='small'>{{ 'projects/ted-avatars/avatars/1538590740.svg' | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1438498200.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1748963700.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1313553540.svg" | img }}</div>
+<div class="small">{{ "projects/ted-avatars/avatars/1538590740.svg" | img }}</div>
 
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1686629340.svg' | img }}</div>
-<div class='medium'>{{ 'projects/ted-avatars/avatars/1430850420.svg' | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1686629340.svg" | img }}</div>
+<div class="medium">{{ "projects/ted-avatars/avatars/1430850420.svg" | img }}</div>
 </div>
 
 While working at [TED](https://www.ted.com), I was part of a project to replace their default avatar,

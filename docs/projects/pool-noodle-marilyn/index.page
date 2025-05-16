@@ -4,7 +4,7 @@
 {% assign hero = 'hero.png' %}
 {% project %}
 
-<div class="big">{{ "banner.jpg" | thumb | img }}</div>
+<div class="big">{{ "banner.jpg" | big_thumb }}</div>
 
 The Marilyn is the first pool noodle project [Dan Gries](https://dangries.com) and I did together.
 
@@ -15,17 +15,11 @@ around the oldest running elevator in Connecticut, and said "that's like a
 low-res pixel grid, we should do something with that."
 -->
 
-<div class="big">
-  {{ "before.jpg" | thumb | img }}
-</div>
+{{ "before.jpg" | big_thumb }}
 
-<div class="big">
-  {{ "by-hand.jpg" | thumb | img }}
-</div>
+{{ "by-hand.jpg" | big_thumb }}
 
-<div class="big">
-  {{ "dang-on-ladder.jpg" | thumb | img }}
-</div>
+{{ "dang-on-ladder.jpg" | big_thumb }}
 
 <!--
 Neither of us had done much with anything non-digital; all the work we were
@@ -36,7 +30,7 @@ already come in colors.
 We tried some experiments:
 
 <div class="big">
-  {{ "fit-experiment.jpg" | thumb | img }}
+  {{ "fit-experiment.jpg" | big_thumb }}
 </div>
 
 So, what should the image be? We thought a human face might be easiest to
@@ -44,7 +38,7 @@ recognize, and maybe a famous face at that, so we went with one of [Warhol's
 portfolio Monroes](https://en.wikipedia.org/wiki/Marilyn_Monroe_portfolio):
 
 <div class="big">
-  {{ "marilyn.jpg" | thumb | img }}
+  {{ "marilyn.jpg" | big_thumb }}
 </div>
 
 We were surprised during the show to see people parse the image as an abstract:
@@ -52,7 +46,7 @@ some only recognized it as a picture when they saw it through their phone as the
 and saw it smaller:
 
 <div class="big">
-  {{ "scales.png" | thumb | img }}
+  {{ "scales.png" | big_thumb }}
 </div>
 
 (Some of them thought it was a photo of Queen Elizabeth, too.)

@@ -127,25 +127,25 @@ constrained, and in the earliest experiments with it, the banner's message was
 reinforced by the emoji.
 
 <div class='grid'>
-<div class='medium'>{{ 'fine-fine.png' | thumb | img }}</div>
-<div class='medium'>{{ 'ty.png' | thumb | img }}</div>
-<div class='medium'>{{ 'hah-alex.png' | thumb | img }}</div>
+{{ 'fine-fine.png' | medium_thumb }}
+{{ 'ty.png' | medium_thumb }}
+{{ 'hah-alex.png' | medium_thumb }}
 </div>
 
 But the two layers can diverge, carrying messages that inform and complement
 each other.
 
 <div class='grid'>
-<div class='big'>{{ 'omfg-hrviolation.png' | thumb | img }}</div>
-<div class='medium'>{{ 'yiss-ty.png' | thumb | img }}</div>
-<div class='medium'>{{ 'lol-fine.png' | thumb | img }}</div>
+{{ 'omfg-hrviolation.png' | big_thumb }}
+{{ 'yiss-ty.png' | medium_thumb }}
+{{ 'lol-fine.png' | medium_thumb }}
 </div>
 
 They can even carry different, contrasting messages.
 
 <div class='grid'>
-<div class='medium'>{{ 'no-dice.png' | thumb | img }}</div>
-<div class='medium'>{{ 'fine-lololol.png' | thumb | img }}</div>
+{{ 'no-dice.png' | medium_thumb }}
+{{ 'fine-lololol.png' | medium_thumb }}
 </div>
 
 <div id='sure-no'>
@@ -191,7 +191,7 @@ built for spectacle and volume, subtlety was a less common result.
 (There was an undercurrent of anarchy and the ridiculous in the team's culture
 that was wonderful for morale.)
 
-<div class='medium'>{{ 'obey-anarchy.png' | thumb | img }}</div>
+{{ 'obey-anarchy.png' | medium_thumb }}
 
 
 # Bugs in the source 🐞🐝🦟🕷🐛🐜
@@ -202,7 +202,7 @@ The first was a bug with how Flowdock would render native emoji: they wouldn't
 all appear at the same size. Here, the message "luv" in ❤️ comes out lumpy and
 illegible:
 
-<div class='medium'>{{ 'bad-luv.png' | thumb | img }}</div>
+{{ 'bad-luv.png' | medium_thumb }}
 
 The second was Flowdock's "inbox" feature, which, like Slack's threads, would
 put a subset of messages in a pane to the right, shrinking the main space and
@@ -210,8 +210,8 @@ forcing more messages to wrap, making many of them illegible.  Ironically, this
 was only aggravated when viewing the emoji at a large setting.
 
 <div class='grid'>
-<div class='big'>{{ 'hmm.png' | thumb | img }}</div>
-<div class='medium'>{{ 'hmm-wrapped.png' | thumb | img }}</div>
+{{ 'hmm.png' | big_thumb }}
+{{ 'hmm-wrapped.png' | medium_thumb }}
 </div>
 
 # Next Steps

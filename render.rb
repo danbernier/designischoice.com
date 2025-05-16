@@ -138,6 +138,46 @@ module CustomFilters
     thumb_path
   end
 
+  def big_thumb(folder_local_image_path)
+    sized_thumb(folder_local_image_path, :big)
+  end
+
+  def medium_thumb(folder_local_image_path)
+    sized_thumb(folder_local_image_path, :medium)
+  end
+
+  def small_thumb(folder_local_image_path)
+    sized_thumb(folder_local_image_path, :small)
+  end
+
+  def sized_thumb(folder_local_image_path, size)
+    # resize image if need to, copy into /thumbs directory
+    # render img tag to thumb,
+    # with correct <div> class around it,
+    # that links to original
+
+    width = {
+      big: 650,
+      medium: 375,
+      small: 185,
+    }.fetch(size)
+
+    image_path = expand_path(folder_local_image_path,
+                             extract('url_path', context))
+
+    thumb_path = File.join("images/thumb", image_path)
+
+    resize_image(image_path, width, save_to: File.join("docs", thumb_path))
+
+    <<~HTML
+    <div class="#{size}">
+      <a target="_blank" href="/#{image_path}">
+        <img src="/#{thumb_path}">
+      </a>
+    </div>
+    HTML
+  end
+
   def img_no_link(img_path, alt = nil)
     if alt.nil?
       "<img src='/#{img_path}'>"
@@ -206,7 +246,9 @@ def render_page(page_path)
   )
 
   File.open(html_path, 'w') do |f|
-    f.puts(HtmlPress.press(rendered_result))
+    html = rendered_result
+    html = HtmlPress.press(html)
+    f.puts(html)
   end
 end
 

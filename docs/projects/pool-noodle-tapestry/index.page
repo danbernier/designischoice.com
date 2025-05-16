@@ -7,44 +7,23 @@
 
 <div class='grid'>
 
-<div class="big">
-{{ "banner.jpg" | thumb | img }}
-</div>
+{{ "banner.jpg" | big_thumb }} 
 
-<div class="small">
-{{ "wip-a.jpg" | thumb | img }}
-</div>
-<div class="small">
-{{ "wip-a2.jpg" | thumb | img }}
-</div>
-<div class="medium">
-{{ "wip-a3.jpg" | thumb | img }}
-</div>
-<div class='grid'>
-<div class="big">
-{{ "wip-b.jpg" | thumb | img }}
-</div>
+{{ "wip-a.jpg" | small_thumb }} 
+{{ "wip-a2.jpg" | small_thumb }} 
+{{ "wip-a3.jpg" | medium_thumb }} 
 
-<div class="medium">
-{{ "wip-c.jpg" | thumb | img }}
-</div>
-<div class="medium">
-{{ "wip-d.jpg" | thumb | img }}
-</div>
+{{ "wip-b.jpg" | big_thumb }} 
 
-<div class="medium">
-{{ "wip-e.jpg" | thumb | img }}
-</div>
-<div class="medium">
-{{ "wip-f.jpg" | thumb | img }}
-</div>
+{{ "wip-c.jpg" | medium_thumb }} 
+{{ "wip-d.jpg" | medium_thumb }} 
 
-<div class="big">
-{{ "wip-g.jpg" | thumb | img }}
-</div>
-<div class="big">
-{{ "sign-your-work.jpg" | thumb | img }}
-</div>
+{{ "wip-e.jpg" | medium_thumb }} 
+{{ "wip-f.jpg" | medium_thumb }} 
+
+{{ "wip-g.jpg" | big_thumb }} 
+{{ "sign-your-work.jpg" | big_thumb }} 
+
 </div>
 
 
