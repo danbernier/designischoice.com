@@ -5,7 +5,7 @@ require 'sinatra'
 require_relative 'render'
 before do
   # load 'render.rb'
-  render_all_pages
+  # render_all_pages
 end
 
 get '/*' do
@@ -26,6 +26,7 @@ get '/*' do
 
     if File.exist?(File.join(path, 'index.html'))
       last_modified(File.mtime(path))
+      render_page(File.join(path, 'index.page'))
       send_file(File.join(path, 'index.html'))
     end
   elsif File.exist?(path)
