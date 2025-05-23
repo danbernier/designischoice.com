@@ -2,6 +2,7 @@
 {% assign occurred_at = 'August 2014' %}
 {% assign event = 'Re:Generate' %}
 {% assign hero = 'hero.png' %}
+{% assign blurb = 'A recognizable face in blue and green pool noodles' %}
 {% project %}
 
 <div class="big">{{ "banner.jpg" | big_thumb }}</div>

@@ -3,6 +3,7 @@
 {% assign event = 'City Wide Open Studios' %}
 {% assign event_url = 'https://www.cwos.org' %}
 {% assign hero = 'hero.jpg' %}
+{% assign blurb = 'Six-foot tall images of animals, made of chunks of pool noodle' %}
 {% project %}
 
 {{ "banner.jpg" | big_thumb }}

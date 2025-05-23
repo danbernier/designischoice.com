@@ -58,6 +58,14 @@ class PageBlock < Liquid::Block
                   ImgFile.new(all_the_assigns_etc['url_path'], hero)
                 end
 
+    # "Obliterate productivity in your work slack! Low-res text banners of emoji pixels"
+    # "Slack in Slack with low-res text banners of emoji pixels"
+    if (blurb = all_the_assigns_etc['blurb']) && blurb.size > 70 # A rough estimate
+      warn "Blurb for #{all_the_assigns_etc['url_path']} is too long:"
+      warn blurb
+      warn "#{'-'*70}|"
+    end
+
     render_oembed_for_this_page(all_the_assigns_etc, hero_file)
 
     rendered = Kramdown::Document.new(super).to_html

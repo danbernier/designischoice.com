@@ -2,6 +2,7 @@
 {% assign occurred_at = 'October 2019' %}
 {% assign event = 'Windowed Worlds' %}
 {% assign hero = 'hero.jpg' %}
+{% assign blurb = 'An abstract gradient, rendered in three lurid pool noodle colors' %}
 
 {% project %}
 
