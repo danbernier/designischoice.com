@@ -51,8 +51,6 @@ let origImagePaths = [
   '/projects/tile-swapping/imgs-orig/sheep.jpg',
 ];
 
-let imagePaths = newImagePaths;
-
 let rawImages = [];
 let sizedImages = [];
 let sourceImageRing;
@@ -104,8 +102,12 @@ let readyToStart = false;
 let tiles = [];
 let theCanvas;
 
+function photoSet() {
+  return getURLParams().photoset;
+}
+
 function preload() {
-  console.log("picset: " + getURLParams().picset);
+  let imagePaths = photoSet() == "original" ? origImagePaths : newImagePaths;
   imagePaths.forEach(function(path, index) {
     loadImage(path, img => { rawImages[index] = img; });
   });
@@ -123,6 +125,17 @@ function setup() {
   // ringPicker.option('new', 'New image set');
   // ringPicker.selected('new');
   // ringPicker.position(0, theCanvas.height - 50);
+
+
+  let photoSetSwitcher = document.createElement("a");
+  if (photoSet() == "original") {
+    photoSetSwitcher.setAttribute("href", "?photoset=new");
+    photoSetSwitcher.append("See this piece with the new photo set");
+  } else {
+    photoSetSwitcher.setAttribute("href", "?photoset=original");
+    photoSetSwitcher.append("See this piece with the photo set from the original installation");
+  }
+  theCanvas.canvas.after(photoSetSwitcher);
 
 
   // 1 tile is as wide as 5 gaps; 10 tiles + 11 gaps = 61 units:
