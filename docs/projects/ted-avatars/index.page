@@ -138,7 +138,7 @@ they be different, they had to be obviously different.
 
 # Build
 
-Tara asked her teammates [Joe Bartlett](https://redopop.com) and me for help.
+Tara asked their teammates [Joe Bartlett](https://redopop.com) and me for help.
 
 Since the primary target platform was ted.com, Joe suggested we generate SVGs,
 producing a crisp image at any resolution and dimension, from a tiny file
@@ -146,7 +146,7 @@ that's fast to download. A random example I just picked weighs only 1.37 KB.
 
 This was a new approach for me: rather than expressing calculations in code, we
 generated SVGs via text templates. Tara already grasped the kinds of variations
-she wanted, and we were able to express that as a set of string interpolations
+they wanted, and we were able to express that as a set of string interpolations
 with some logic transforming the input date into colors, radii, opacities,
 rotations, etc, as needed; the organic shapes and Helvetica number shapes were
 stored in an array of path coordinates, and the input date also became an index
